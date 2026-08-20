@@ -20,8 +20,8 @@ Dokumen digital dan sistem laporan berbasis web interaktif (*HTML/CSS/JS*) yang 
      - 🔍 **Pengatur Ukuran Huruf (A- / A+)** untuk kenyamanan membaca.
    - **Kartu Ringkasan Statistik Desa**: Visualisasi data demografi, luas wilayah, jumlah KK, dan ketinggian desa Popontolen.
 
-3. **Aset Vektor Tajam (SVG)**:
-   - Logo resmi BPS Kabupaten Minahasa Selatan, Logo Program Desa Cantik, BerAKHLAK & Bangga Melayani Bangsa, serta Logo Sensus Ekonomi 2026 dalam format vektor SVG beresolusi tak terbatas (*anti-pixelate*).
+3. **Aset Logo Resmi PNG**:
+   - Logo resmi BPS (`logo-bps.png`), Desa Cantik (`logo-desacantik.png`), BerAKHLAK (`logo-berakhlak.png`), dan Sensus Ekonomi 2026 (`logo-sensusekonomi.png`).
 
 ---
 
@@ -55,13 +55,10 @@ D:\BPSMinsel\Desa Cantik\
 │   └── print.css                        # Aturan cetak A4 & pembagian halaman PDF
 ├── js/
 │   └── main.js                          # Pengendali interaktivitas & event cetak
-├── assets/
-│   └── logos/
-│       ├── bps.svg                      # Vektor Logo BPS Minsel
-│       ├── desa_cantik.svg              # Vektor Logo Desa Cantik
-│       ├── berakhlak.svg                # Vektor Logo BerAKHLAK
-│       ├── sensus_ekonomi_2026.svg      # Vektor Logo Sensus Ekonomi 2026
-│       └── stamp_signature.svg          # Elemen stempel & ttd resmi
+├── logo-bps.png                         # Logo resmi BPS
+├── logo-desacantik.png                  # Logo resmi Desa Cantik
+├── logo-berakhlak.png                   # Logo resmi BerAKHLAK
+├── logo-sensusekonomi.png               # Logo resmi Sensus Ekonomi 2026
 ├── Laporan Akhir Desa Cantik Popontolen Tahun 2026.pdf  # File sumber PDF asli
 └── README.md                            # Panduan dokumentasi proyek
 ```
