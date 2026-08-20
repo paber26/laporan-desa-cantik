@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dokumen Cetak PDF - Laporan Akhir Desa Cantik Popontolen 2026</title>
+  <title>Laporan Akhir Desa Cantik Popontolen 2026 - PDF Document</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css">
   <link rel="icon" href="images/logo-bps.png" type="image/png">
   <style>
     body {
-      background: #CBD5E1;
+      background: #475569;
       padding: 30px 0;
       display: flex;
       flex-direction: column;
@@ -36,7 +36,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
     @media print {
@@ -49,7 +49,7 @@
 </head>
 <body>
   <div class="print-floating-bar no-print">
-    <span style="color: #FFF; font-size: 0.85rem; font-weight: 600;">Mode Dokumen Cetak</span>
+    <span style="color: #FFF; font-size: 0.85rem; font-weight: 600;">Dokumen Siap Cetak PDF</span>
     <button class="btn btn-success" onclick="window.print()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 6 2 18 2 18 9"></polyline>
@@ -59,7 +59,7 @@
       <span>Cetak / Save as PDF</span>
     </button>
     <button class="btn btn-primary" onclick="window.close()">
-      âœ• Tutup Tab
+      âœ• Tutup
     </button>
   </div>
 
@@ -818,5 +818,14 @@
 </article>
 
   </div>
+
+  <script>
+    // Otomatis membuka dialog cetak saat halaman dibuka di tab baru
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        window.print();
+      }, 400);
+    });
+  </script>
 </body>
 </html>

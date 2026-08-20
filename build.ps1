@@ -59,21 +59,13 @@ $indexHeader = @"
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      <a href="print.html" target="_blank" class="btn btn-primary" title="Buka Dokumen Cetak Khusus di Tab Baru">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-        <span>Buka Halaman Cetak</span>
-      </a>
-      <button class="btn btn-success" id="printBtn" title="Generate PDF dan Buka di Tab Baru">
+      <button class="btn btn-success" id="printBtn" title="Buka Dokumen PDF di Tab Baru & Cetak">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="6 9 6 2 18 2 18 9"></polyline>
           <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
           <rect x="6" y="14" width="12" height="8"></rect>
         </svg>
-        <span>Generate & Cetak PDF</span>
+        <span>Buka PDF di Tab Baru (Cetak)</span>
       </button>
     </div>
   </header>
@@ -174,9 +166,6 @@ $indexFooter = @"
     </div>
   </main>
 
-  <div id="toastNotification" class="toast-notification no-print"></div>
-
-  <script src="js/html2pdf.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
@@ -189,13 +178,13 @@ $printHeader = @"
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dokumen Cetak PDF - Laporan Akhir Desa Cantik Popontolen 2026</title>
+  <title>Laporan Akhir Desa Cantik Popontolen 2026 - PDF Document</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css">
   <link rel="icon" href="images/logo-bps.png" type="image/png">
   <style>
     body {
-      background: #CBD5E1;
+      background: #475569;
       padding: 30px 0;
       display: flex;
       flex-direction: column;
@@ -222,7 +211,7 @@ $printHeader = @"
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
     @media print {
@@ -235,7 +224,7 @@ $printHeader = @"
 </head>
 <body>
   <div class="print-floating-bar no-print">
-    <span style="color: #FFF; font-size: 0.85rem; font-weight: 600;">Mode Dokumen Cetak</span>
+    <span style="color: #FFF; font-size: 0.85rem; font-weight: 600;">Dokumen Siap Cetak PDF</span>
     <button class="btn btn-success" onclick="window.print()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 6 2 18 2 18 9"></polyline>
@@ -245,7 +234,7 @@ $printHeader = @"
       <span>Cetak / Save as PDF</span>
     </button>
     <button class="btn btn-primary" onclick="window.close()">
-      ✕ Tutup Tab
+      ✕ Tutup
     </button>
   </div>
 
@@ -254,6 +243,15 @@ $printHeader = @"
 
 $printFooter = @"
   </div>
+
+  <script>
+    // Otomatis membuka dialog cetak saat halaman dibuka di tab baru
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        window.print();
+      }, 400);
+    });
+  </script>
 </body>
 </html>
 "@

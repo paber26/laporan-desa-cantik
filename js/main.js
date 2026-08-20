@@ -1,6 +1,6 @@
 /**
  * LAPORAN AKHIR DESA CANTIK POPONTOLEN 2026
- * Interactive Document Engine & Enhanced PDF Generator
+ * Interactive Document Engine & Print Controller
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,61 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainWrapper = document.getElementById('mainWrapper');
   const tocLinks = document.querySelectorAll('.toc-list a, .toc-sublist a');
   const sections = document.querySelectorAll('.page-sheet[id]');
-  const toastNotification = document.getElementById('toastNotification');
 
-  // Helper Toast Notification
-  function showToast(message, type = 'info') {
-    if (!toastNotification) return;
-    toastNotification.textContent = message;
-    toastNotification.className = `toast-notification show ${type}`;
-    setTimeout(() => {
-      toastNotification.className = 'toast-notification';
-    }, 4000);
-  }
-
-  // 1. Generate Real PDF & Open in New Tab
+  // 1. Buka Halaman Cetak Bersih di Tab Baru (Memicu Native Vector PDF)
   if (printBtn) {
-    printBtn.addEventListener('click', async () => {
-      const docContainer = document.querySelector('.document-container');
-      if (!docContainer) {
-        window.open('print.html', '_blank');
-        return;
-      }
-
-      showToast('⏳ Sedang memproses dan men-generate dokumen PDF...', 'info');
-
-      // Check if html2pdf is loaded
-      if (typeof html2pdf !== 'undefined') {
-        try {
-          const opt = {
-            margin: [10, 10, 10, 10],
-            filename: 'Laporan_Akhir_Desa_Cantik_Popontolen_2026.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, letterRendering: true, logging: false },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            pagebreak: { mode: ['css', 'legacy'] }
-          };
-
-          // Generate PDF Blob
-          const pdfBlob = await html2pdf().set(opt).from(docContainer).outputPdf('blob');
-          const blobUrl = URL.createObjectURL(pdfBlob);
-          
-          // Open generated PDF in a brand new tab
-          const newTab = window.open(blobUrl, '_blank');
-          if (newTab) {
-            showToast('✅ Dokumen PDF berhasil di-generate dan dibuka di tab baru!', 'success');
-          } else {
-            showToast('⚠️ Pop-up diblokir browser. Membuka halaman cetak khusus...', 'warning');
-            window.open('print.html', '_blank');
-          }
-        } catch (err) {
-          console.warn('html2pdf fallback to dedicated print view:', err);
-          window.open('print.html', '_blank');
-        }
-      } else {
-        // Direct fallback to clean print tab
-        window.open('print.html', '_blank');
-      }
+    printBtn.addEventListener('click', () => {
+      window.open('print.html', '_blank');
     });
   }
 
