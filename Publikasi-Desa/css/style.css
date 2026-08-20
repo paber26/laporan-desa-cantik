@@ -985,3 +985,163 @@ body.dark-mode .doc-table .subhead-row {
   border-left-color: var(--bps-orange);
 }
 
+/* ==========================================================================
+   PRINT STYLESHEET – Full-Page Tables & Proper Page Breaks
+   ========================================================================== */
+@media print {
+  /* Hide interactive UI elements */
+  .app-topbar, .app-sidebar, .topbar-actions, .toast-notification {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .main-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .document-container {
+    gap: 0;
+    max-width: none;
+  }
+
+  /* Each page-sheet = one printed page */
+  .page-sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto;
+    padding: 15mm 18mm 15mm 20mm;
+    box-shadow: none !important;
+    border-radius: 0;
+    page-break-after: always;
+    break-after: page;
+    overflow: visible;
+  }
+
+  .page-sheet:last-child {
+    page-break-after: auto;
+  }
+
+  /* Cover pages */
+  .page-sheet.cover-sheet {
+    padding: 0 !important;
+  }
+
+  .cover-sheet img {
+    width: 100% !important;
+    height: auto;
+  }
+
+  /* Tables: FULL WIDTH, never break across pages */
+  .table-wrapper {
+    width: 100% !important;
+    overflow: visible !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: 12px 0 16px;
+  }
+
+  .doc-table {
+    width: 100% !important;
+    font-size: 9pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .doc-table th, .doc-table td {
+    padding: 6px 8px;
+    border: 0.5pt solid #94A3B8;
+  }
+
+  .doc-table thead th {
+    background-color: #E2E8F0 !important;
+    color: #0F172A !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .doc-table tbody tr:nth-child(even) {
+    background-color: #F8FAFC !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  tr[style*="background-color: #E2E8F0"] {
+    background-color: #E2E8F0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent orphan headers and titles */
+  .chapter-header, .section-title, h3, h4,
+  .table-title, .doc-header {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Recommendation cards: don't break */
+  .recom-card, .highlight-box {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Infographic KPI Grid: ensure colors print */
+  .infographic-kpi-grid > div {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Graph cards */
+  .graph-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .graph-card img {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Footer */
+  .page-sheet-footer {
+    margin-top: auto;
+    padding-top: 8px;
+  }
+
+  /* Typography adjustments for print */
+  p.doc-paragraph {
+    font-size: 10pt;
+    line-height: 1.55;
+    margin-bottom: 10px;
+    text-indent: 20px;
+  }
+
+  .chapter-title {
+    font-size: 14pt;
+  }
+
+  .section-title {
+    font-size: 11pt;
+  }
+
+  /* Colored text: force print */
+  [style*="color:"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Colored backgrounds: force print */
+  [style*="background"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
