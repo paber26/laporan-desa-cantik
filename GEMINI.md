@@ -25,24 +25,24 @@ File ini adalah instruksi permanen (Project Memory & System Guidelines) untuk AI
 
 ## 🔄 2. Alur Kerja Dua Tahap (Dual-Stage Architecture)
 
-Proyek ini dipisahkan secara tegas menjadi 2 tahap:
+Proyek ini dipisahkan secara tegas menjadi 2 tahap di dalam folder `Laporan Akhir/`:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│ TAHAP 1: EDITING, PENGISIAN & DRAFTING (HTML MODULAR)       │
-│ - Edit file per-bab di folder sections/ (*.html)            │
-│ - Jalankan build.bat (atau build.ps1) untuk update HTML     │
-│ - Buka / Live Preview di index.html atau print.html         │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ (Setelah seluruh isi dokumen fix)
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│ TAHAP 2: FINALISASI & PUBLIKASI RESMI (LATEX / OVERLEAF)    │
-│ - Sesuaikan perubahan teks ke folder latex/sections/ (*.tex)│
-│ - Jalankan latex/package_overleaf.bat untuk membuat ZIP     │
-│ - Upload Laporan_Desa_Cantik_Overleaf.zip ke Overleaf.com   │
-│ - Recompile untuk menghasilkan PDF vektor 100% sempurna     │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TAHAP 1: EDITING, PENGISIAN & DRAFTING (HTML MODULAR)                   │
+│ - Edit file per-bab di folder Laporan Akhir/sections/ (*.html)          │
+│ - Jalankan Laporan Akhir/build.bat (atau build.ps1) untuk update HTML   │
+│ - Buka / Live Preview di Laporan Akhir/index.html atau print.html       │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │ (Setelah seluruh isi dokumen fix)
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TAHAP 2: FINALISASI & PUBLIKASI RESMI (LATEX / OVERLEAF)                │
+│ - Sesuaikan perubahan teks ke Laporan Akhir/latex/sections/ (*.tex)     │
+│ - Jalankan Laporan Akhir/latex/package_overleaf.bat untuk membuat ZIP   │
+│ - Upload Laporan_Desa_Cantik_Overleaf.zip ke Overleaf.com               │
+│ - Recompile untuk menghasilkan PDF vektor 100% sempurna                 │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -52,16 +52,17 @@ Proyek ini dipisahkan secara tegas menjadi 2 tahap:
 ```
 D:\BPSMinsel\Desa Cantik\
 │
-├── [RUANG KERJA UTAMA - HTML DRAFTING & PREVIEW]
+├── Laporan Akhir/                       # FOLDER UTAMA DOKUMEN LAPORAN AKHIR
 │   ├── sections/                        # Berkas HTML per-bab (FOKUS EDITING UTAMA)
 │   │   ├── cover.html                   # Halaman cover depan
 │   │   ├── kata-pengantar.html          # Kata pengantar & TTD Kepala BPS
 │   │   ├── daftar-isi.html              # Halaman daftar isi
+│   │   ├── daftar-tabel.html            # Halaman daftar tabel
 │   │   ├── bab1-pendahuluan.html        # BAB I: Latar belakang, profil desa, tata kelola
 │   │   ├── bab2-persiapan.html          # BAB II: Tabel rencana kerja, pencanangan, pelatihan
 │   │   ├── bab3-pembinaan.html          # BAB III: Matriks realisasi, rantai data SDI
 │   │   ├── bab4-penutup.html            # BAB IV: Matriks kendala/solusi, saran & kesimpulan
-│   │   └── lampiran.html                # Cover pemisah lampiran
+│   │   └── cover-belakang.html          # Halaman cover belakang
 │   │
 │   ├── build.bat                        # Double-click untuk menggabungkan sections/ ke index.html & print.html
 │   ├── build.ps1                        # Script PowerShell penggabung otomatis
@@ -72,10 +73,9 @@ D:\BPSMinsel\Desa Cantik\
 │   │   └── print.css                    # Standar cetak A4 presisi anti-overflow
 │   ├── js/
 │   │   └── main.js                      # Fitur buka tab cetak, zoom teks, scrollspy
-│   └── images/                          # Logo resmi PNG (BPS, Desa Cantik, BerAKHLAK, SE2026)
-│
-├── [RUANG KERJA FINAL - LATEX OVERLEAF PUBLISHING]
-│   └── latex/                           # FOLDER KHUSUS LATEX
+│   ├── images/                          # Logo resmi PNG & Foto Lanskap Popontolen
+│   │
+│   └── latex/                           # FOLDER KHUSUS LATEX & OVERLEAF PUBLISHING
 │       ├── main.tex                     # Master file LaTeX
 │       ├── package_overleaf.bat         # Double-click untuk membuat ZIP Overleaf
 │       ├── package_overleaf.ps1         # Script kompresi ZIP
@@ -86,11 +86,9 @@ D:\BPSMinsel\Desa Cantik\
 │       │   ├── 02_bab1_pendahuluan.tex
 │       │   ├── 03_bab2_persiapan.tex
 │       │   ├── 04_bab3_pembinaan.tex
-│       │   ├── 05_bab4_penutup.tex
-│       │   └── 06_lampiran.tex
-│       └── images/                      # Salinan logo PNG untuk kompilasi LaTeX
+│       │   └── 05_bab4_penutup.tex
+│       └── images/                      # Salinan logo & cover untuk kompilasi LaTeX
 │
-├── Laporan Akhir Desa Cantik Popontolen Tahun 2026.pdf  # File PDF sumber asli
 ├── GEMINI.md                            # Instruksi permanen AI Assistant
 ├── AGENTS.md                            # Instruksi permanen Antigravity Agent
 └── README.md                            # Panduan dokumentasi proyek
@@ -101,11 +99,11 @@ D:\BPSMinsel\Desa Cantik\
 ## 🛠️ 4. Panduan untuk AI Assistant (Setiap Percakapan Baru)
 
 1. **Prioritas Alur**:
-   - Jika pengguna meminta menambah teks, mengedit bab, atau memasukkan data baru, **selalu lakukan perubahan di file `sections/*.html` terlebih dahulu**.
-   - Setelah mengedit `sections/*.html`, jalankan script `build.ps1` untuk merefresh `index.html` dan `print.html`.
-   - Jika pengguna meminta sinkronisasi ke LaTeX, barulah perbarui file terkait di `latex/sections/*.tex` dan jalankan `latex/package_overleaf.ps1`.
+   - Jika pengguna meminta menambah teks, mengedit bab, atau memasukkan data baru, **selalu lakukan perubahan di file `Laporan Akhir/sections/*.html` terlebih dahulu**.
+   - Setelah mengedit `sections/*.html`, jalankan script `Laporan Akhir/build.ps1` untuk merefresh `index.html` dan `print.html`.
+   - Jika pengguna meminta sinkronisasi ke LaTeX, barulah perbarui file terkait di `Laporan Akhir/latex/sections/*.tex` dan jalankan `Laporan Akhir/latex/package_overleaf.ps1`.
 2. **Version Control (Git)**:
    - Repository lokal telah aktif. Selalu pastikan commit dilakukan setelah setiap perubahan berarti dengan format konvensional (`feat: ...`, `fix: ...`, `docs: ...`).
 3. **Pencetakan Dokumen**:
-   - Pencetakan web dilakukan melalui `print.html` di tab baru yang secara native memicu dialog print browser (*Save as PDF*).
-   - Pencetakan final buku resmi menggunakan `latex/Laporan_Desa_Cantik_Overleaf.zip` di Overleaf.
+   - Pencetakan web dilakukan melalui `Laporan Akhir/print.html` di tab baru yang secara native memicu dialog print browser (*Save as PDF*).
+   - Pencetakan final buku resmi menggunakan `Laporan Akhir/latex/Laporan_Desa_Cantik_Overleaf.zip` di Overleaf.
