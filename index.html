@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laporan Akhir Pembinaan Desa Cinta Statistik (Desa Cantik) Desa Popontolen Kecamatan Tumpaan Kabupaten Minahasa Selatan Tahun 2026 - Badan Pusat Statistik">
+  <meta name="author" content="Badan Pusat Statistik Kabupaten Minahasa Selatan">
+  <title>Laporan Akhir Desa Cantik Popontolen Tahun 2026 | BPS Kabupaten Minahasa Selatan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="icon" href="assets/logos/bps.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION & ACTION BAR (Non-Printable)
+       ========================================================================== -->
+  <header class="app-topbar no-print">
+    <div class="topbar-brand">
+      <button class="btn btn-icon" id="sidebarToggle" title="Buka/Tutup Navigasi Daftar Isi" aria-label="Toggle Navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <span class="topbar-badge">BPS 7105</span>
+      <span class="topbar-title">Desa Cantik Popontolen 2026</span>
+      <span class="topbar-subtitle">| Laporan Akhir Pembinaan</span>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="btn btn-icon" id="fontSizeDown" title="Perkecil Ukuran Teks" aria-label="Decrease Font Size">
+        <span style="font-size: 0.8rem; font-weight: bold;">A-</span>
+      </button>
+      <button class="btn btn-icon" id="fontSizeUp" title="Perbesar Ukuran Teks" aria-label="Increase Font Size">
+        <span style="font-size: 1rem; font-weight: bold;">A+</span>
+      </button>
+      <button class="btn btn-icon" id="themeToggle" title="Ganti Mode Gelap/Terang" aria-label="Toggle Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <button class="btn btn-success" id="printBtn" title="Cetak atau Simpan ke format PDF (Ukuran A4)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>Cetak / Simpan PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SIDEBAR / DAFTAR ISI DINAMIS (Non-Printable)
+       ========================================================================== -->
+  <aside class="app-sidebar no-print" id="appSidebar">
+    <div class="sidebar-header">
+      <h2 class="sidebar-title">Daftar Isi Dokumen</h2>
+    </div>
+    <nav>
+      <ul class="toc-list">
+        <li class="toc-item">
+          <a href="#coverPage"><span>Cover Laporan</span></a>
+        </li>
+        <li class="toc-item">
+          <a href="#kataPengantar"><span>Kata Pengantar</span><small>i</small></a>
+        </li>
+        <li class="toc-item">
+          <a href="#daftarIsi"><span>Daftar Isi</span><small>ii</small></a>
+        </li>
+        <li class="toc-item">
+          <a href="#bab1"><span>BAB I. Pendahuluan</span><small>1</small></a>
+          <ul class="toc-sublist">
+            <li><a href="#sub1-1">1.1 Latar Belakang</a></li>
+            <li><a href="#sub1-2">1.2 Gambaran Umum Desa</a></li>
+            <li><a href="#sub1-3">1.3 Tata Kelola Desa Cantik</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#bab2"><span>BAB II. Persiapan Program</span><small>6</small></a>
+          <ul class="toc-sublist">
+            <li><a href="#sub2-1">2.1 Rancangan Kegiatan</a></li>
+            <li><a href="#sub2-2">2.2 Sosialisasi / Pencanangan</a></li>
+            <li><a href="#sub2-3">2.3 Pelatihan Pembina Statistik</a></li>
+            <li><a href="#sub2-4">2.4 Anggaran Program</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#bab3"><span>BAB III. Pembinaan & Pendampingan</span><small>9</small></a>
+          <ul class="toc-sublist">
+            <li><a href="#sub3-1">3.1 Gambaran Umum Realisasi</a></li>
+            <li><a href="#sub3-2">3.2 Pengumpulan Data</a></li>
+            <li><a href="#sub3-3">3.3 Pengolahan Data</a></li>
+            <li><a href="#sub3-4">3.4 Penyajian Data</a></li>
+            <li><a href="#sub3-5">3.5 Pemanfaatan Data</a></li>
+            <li><a href="#sub3-6">3.6 Manajemen Data</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#bab4"><span>BAB IV. Penutup</span><small>12</small></a>
+          <ul class="toc-sublist">
+            <li><a href="#sub4-1">4.1 Kendala dan Solusi</a></li>
+            <li><a href="#matriksKendala">Tabel Matriks Kendala</a></li>
+            <li><a href="#sub4-2">4.2 Kesimpulan & Saran</a></li>
+          </ul>
+        </li>
+        <li class="toc-item">
+          <a href="#lampiranCover"><span>Lampiran</span><small>17</small></a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN WRAPPER & DOCUMENT PAGES
+       ========================================================================== -->
+  <main class="main-wrapper" id="mainWrapper">
+    <div class="document-container">
+
+      <!-- ====================================================================
+           PAGE 1: COVER
+           ==================================================================== -->
+      <article class="page-sheet cover-sheet" id="coverPage">
+        <div class="cover-inner">
+          <!-- Background Ribbon Accents -->
+          <div class="cover-top-ribbon-sub"></div>
+          <div class="cover-top-ribbon"></div>
+          <div class="cover-bottom-ribbon-sub"></div>
+          <div class="cover-bottom-ribbon"></div>
+
+          <!-- Header Logos Bar -->
+          <div class="cover-logos-bar">
+            <div class="logo-item" title="Badan Pusat Statistik">
+              <img src="assets/logos/bps.svg" alt="Logo BPS" style="height: 48px;">
+            </div>
+            <div class="logo-item" title="Desa Cantik (Desa Cinta Statistik)">
+              <img src="assets/logos/desa_cantik.svg" alt="Logo Desa Cantik" style="height: 44px;">
+            </div>
+            <div class="logo-item" title="BerAKHLAK & Bangga Melayani Bangsa">
+              <img src="assets/logos/berakhlak.svg" alt="Logo BerAKHLAK" style="height: 40px;">
+            </div>
+            <div class="logo-item" title="Sensus Ekonomi 2026">
+              <img src="assets/logos/sensus_ekonomi_2026.svg" alt="Logo Sensus Ekonomi 2026" style="height: 44px;">
+            </div>
+          </div>
+
+          <!-- Cover Main Typography -->
+          <div class="cover-main-content">
+            <span class="cover-title-badge">Laporan Resmi Pembinaan Statistik Sektoral</span>
+            <h1 class="cover-title-main">LAPORAN AKHIR</h1>
+            <h2 class="cover-title-sub">PEMBINAAN DESA CANTIK</h2>
+            <div class="cover-title-desa">DESA POPONTOLEN</div>
+          </div>
+
+          <!-- Cover Footer Year -->
+          <div class="cover-year-tag">
+            TAHUN 2026
+          </div>
+        </div>
+      </article>
+
+      <!-- Quick Interactive Statistics Overview (Visible in Web, hidden in Print) -->
+      <section class="quick-stats-grid no-print" style="width: 100%; max-width: 210mm;">
+        <div class="stat-card">
+          <div class="stat-val">365 Ha</div>
+          <div class="stat-label">Luas Wilayah</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">1.570</div>
+          <div class="stat-label">Total Penduduk</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">816 / 754</div>
+          <div class="stat-label">Laki / Perempuan</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">569</div>
+          <div class="stat-label">Kepala Keluarga</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">± 3 mdpl</div>
+          <div class="stat-label">Ketinggian</div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PAGE 2: KATA PENGANTAR
+           ==================================================================== -->
+      <article class="page-sheet page-kata-pengantar" id="kataPengantar">
+        <div class="sheet-content">
+          <div class="doc-header">
+            <h1>Kata Pengantar</h1>
+          </div>
+
+          <p class="doc-paragraph">
+            Puji dan syukur kami panjatkan kehadirat Tuhan Yang Maha Kuasa, atas rahmat dan karunia-Nya sehingga kami dapat menyusun dan menyelesaikan <strong>Laporan Pembinaan Desa Cinta Statistik (Desa Cantik)</strong> di Desa Popontolen, Kecamatan Tumpaan Kabupaten Minahasa Selatan dapat diselesaikan dengan tepat pada waktunya.
+          </p>
+
+          <p class="doc-paragraph">
+            Laporan ini disusun untuk memenuhi rangkaian Pembinaan Desa Cantik 2026 yang diselenggarakan oleh Badan Pusat Statistik (BPS). Proses penyusunan laporan ini tidak terlepas dari peran banyak pihak yang telah membantu proses pembinaan Desa Cantik di Desa Popontolen. Oleh karena itu, pada kesempatan ini kami mengucapkan terima kasih yang sebesar-besarnya kepada seluruh pihak yang turut serta dalam pembinaan Desa Cantik ini.
+          </p>
+
+          <p class="doc-paragraph">
+            Kami menyadari bahwa penyusunan laporan ini masih jauh dari kesempurnaan. Kritik dan saran yang membangun sangat kami harapkan untuk perbaikan tahap pembinaan Desa Cantik berikutnya. Demikian, semoga laporan ini dapat bermanfaat untuk kemajuan BPS dan kemandirian statistik di Desa Popontolen.
+          </p>
+
+          <!-- Signature Block -->
+          <div class="signature-section">
+            <div class="signature-box">
+              <div class="sig-date">Amurang Barat, 10 Agustus 2026</div>
+              <div class="sig-role">Kepala BPS Kabupaten Minahasa Selatan</div>
+              <div class="sig-graphic-area">
+                <img src="assets/logos/stamp_signature.svg" alt="Stempel & Tanda Tangan Resmi" class="sig-stamp-img">
+              </div>
+              <div class="sig-name">Irena Listianawati, SST, SE, M.Si</div>
+              <div class="sig-nip">Pembina Tingkat I / BPS Kab. Minahasa Selatan</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-sheet-footer">
+          <span class="footer-doc-info">Laporan Akhir Desa Cantik Popontolen 2026</span>
+          <span class="footer-page-num">i</span>
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           PAGE 3: DAFTAR ISI
+           ==================================================================== -->
+      <article class="page-sheet page-daftar-isi" id="daftarIsi">
+        <div class="sheet-content">
+          <div class="doc-header">
+            <h1>Daftar Isi</h1>
+          </div>
+
+          <div class="toc-doc-table">
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">Kata Pengantar</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">i</span>
+            </div>
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">Daftar Isi</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">ii</span>
+            </div>
+
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">BAB I. PENDAHULUAN</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">1</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">1.1 Latar Belakang</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">1</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">1.2 Gambaran Umum Desa/Kelurahan</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">2</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">1.3 Gambaran Umum Tata Kelola Desa Cantik di Desa/Kelurahan</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">3</span>
+            </div>
+
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">BAB II. PERSIAPAN PROGRAM DESA CANTIK</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">6</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">2.1 Rancangan Kegiatan Desa Cantik 2026</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">6</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">2.2 Kegiatan Sosialisasi/Pencanangan</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">7</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">2.3 Kegiatan Pelatihan Pembinaan Statistik Desa Popontolen</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">8</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">2.4 Anggaran Program Desa Cantik</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">8</span>
+            </div>
+
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">BAB III. PEMBINAAN DAN PENDAMPINGAN DESA CANTIK</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">9</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.1 Gambaran Umum Realisasi Pembinaan Desa Cantik</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">9</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.2 Identifikasi Kebutuhan Desa</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">9</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.3 Pengumpulan/Inventarisasi Data</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">10</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.4 Pengolahan Data</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">10</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.5 Penyajian Data</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">10</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.6 Pemanfaatan Data</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">11</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">3.7 Manajemen Data di Desa Popontolen</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">11</span>
+            </div>
+
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">BAB IV. PENUTUP</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">12</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">4.1 Kendala dan Solusi</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">12</span>
+            </div>
+            <div class="toc-doc-row level-3">
+              <span class="toc-doc-title">4.1.1 Keterbatasan Sumber Daya Manusia (SDM)</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">12</span>
+            </div>
+            <div class="toc-doc-row level-3">
+              <span class="toc-doc-title">4.1.2 Kurangnya Infrastruktur Teknologi</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">12</span>
+            </div>
+            <div class="toc-doc-row level-3">
+              <span class="toc-doc-title">4.1.3 Kesadaran Masyarakat yang Rendah</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">12</span>
+            </div>
+            <div class="toc-doc-row level-3">
+              <span class="toc-doc-title">4.1.4 Data Tidak Terkelola dengan Baik</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">13</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">Tabel Matriks Kendala dan Solusi</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">14</span>
+            </div>
+            <div class="toc-doc-row level-2">
+              <span class="toc-doc-title">4.2 Kesimpulan dan Saran</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">15</span>
+            </div>
+
+            <div class="toc-doc-row level-1">
+              <span class="toc-doc-title">Daftar Lampiran</span>
+              <span class="toc-doc-dots"></span>
+              <span class="toc-doc-page">17</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-sheet-footer">
+          <span class="footer-doc-info">Laporan Akhir Desa Cantik Popontolen 2026</span>
+          <span class="footer-page-num">ii</span>
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           PAGE 4: BAB I PENDAHULUAN
+           ==================================================================== -->
+      <article class="page-sheet page-bab-1" id="bab1">
+        <div class="sheet-content">
+          <div class="doc-header chapter-head">
+            <span class="chapter-badge">BAB I</span>
+            <h2 class="chapter-title">PENDAHULUAN</h2>
+          </div>
+
+          <!-- Sub 1.1 -->
+          <h3 class="section-title" id="sub1-1">1.1 Latar Belakang</h3>
+          <p class="doc-paragraph">
+            Berdasarkan Undang-Undang Nomor 6 Tahun 2014 tentang Desa dan Peraturan Presiden Nomor 39 Tahun 2019 tentang Satu Data Indonesia, pemerintah desa menjadi penyelenggara kegiatan statistik di wilayahnya masing-masing sehingga peran desa sebagai satuan wilayah terkecil menjadi sangat penting. Hal ini karena desa tidak lagi menjadi objek pembangunan, melainkan sebagai subjek dan ujung tombak pembangunan. Oleh karena itu, sebagaimana tertuang dalam Rencana Pembangunan Jangka Menengah Nasional (RPJMN) periode 2020-2026, diperlukan penguatan tata kelola pemerintahan desa dalam upaya pengembangan wilayahnya guna mengurangi kesenjangan dan menjamin pemerataan. Kebijakan desentralisasi dan otonomi daerah menjadi instrumen utama dalam memberikan peluang bagi pemerintah desa untuk membangun desa serta meningkatkan kemandirian dan daya saing desa. Dalam membangun desa, berbagai potensi desa yang dimiliki merupakan modal bagi desa untuk melakukan pembangunan.
+          </p>
+
+          <p class="doc-paragraph">
+            Saat ini di desa terdapat berbagai sistem aplikasi (Prodeskel, SDGS Desa, SIK-NG, dst) yang berasal dari berbagai kementerian pusat dan dinas daerah. Sementara, Aparat Desa sebagai narasumber atau produsen data dari berbagai sistem aplikasi tersebut. Dari berbagai sistem yang ada, seharusnya desa memiliki data yang lengkap dan akurat sebagai landasan informasi dalam pengambilan kebijakan pembangunan di desa. Selain itu, permasalahan lainnya adalah mengenai relatif masih rendahnya kualitas dan kapasitas sumber daya manusia (SDM) di pemerintah desa dalam hal pengelolaan data desa. Hal ini berdampak pada rendahnya literasi data di tingkat desa yang pada akhirnya berpengaruh pada komitmen pemerintah desa untuk mengoptimalkan pemanfaatan data dalam kebijakan pembangunan, yang pada gilirannya dapat berdampak pada pengambilan kebijakan yang tidak tepat sasaran.
+          </p>
+
+          <p class="doc-paragraph">
+            Data statistik yang dikumpulkan di tingkat desa seharusnya dapat dikelola dan dimanfaatkan oleh pemerintah desa. Selain itu, pengelolaan dan pemanfaatan data desa juga seharusnya selaras dengan prinsip Satu Data Indonesia. Untuk mewujudkannya tidak hanya diperlukan koordinasi dengan penyelenggara kegiatan statistik dan sinkronisasi proses penyelenggaraannya di tingkat desa, tetapi juga diperlukan peningkatan literasi statistik pemerintah desa dalam rangka menjadikan mereka sebagai subjek dalam pengelolaan dan pemanfaatan data di tingkat desa.
+          </p>
+
+          <p class="doc-paragraph">
+            Badan Pusat Statistik (BPS) sebagai <em>leading sector</em> dalam pengembangan statistik memiliki peran penting dalam peningkatan literasi tersebut. Sebagaimana diamanatkan dalam Undang-Undang Nomor 16 Tahun 1997 tentang Statistik, BPS berkewajiban untuk memberikan pembinaan statistik kepada Kementerian/Lembaga/Satuan Kerja Perangkat Daerah/Institusi Lainnya, termasuk hingga tingkat desa, melalui sistem statistik nasional (SSN) yang berkesinambungan sebagai salah satu bentuk kontribusi dalam peningkatan literasi statistik guna mendukung pembangunan nasional.
+          </p>
+
+          <p class="doc-paragraph">
+            Oleh sebab itu, sebagai salah satu perwujudan amanat UU tersebut adalah dengan dilaksanakannya suatu kegiatan pembinaan statistik sektoral di tingkat desa secara berkesinambungan dan komprehensif, yaitu <strong>Program Pembinaan Statistik Sektoral Desa Cinta Statistik (Desa Cantik)</strong>. Dalam mendukung upaya tersebut, BPS Kabupaten Minahasa Selatan sebagai salah satu Pembina Desa Cantik melaksanakan pembinaan Desa Cantik di Desa Popontolen Kecamatan Tumpaan, Kabupaten Minahasa Selatan.
+          </p>
+
+          <!-- Sub 1.2 -->
+          <h3 class="section-title" id="sub1-2">1.2 Gambaran Umum Desa/Kelurahan</h3>
+          <p class="doc-paragraph">
+            Desa Popontolen termasuk salah satu Desa dalam Kecamatan Tumpaan dengan luas wilayah <strong>365 ha</strong>. Jumlah penduduk sudah mencapai <strong>1.570 jiwa</strong> yang merupakan penduduk tetap, dengan jumlah penduduk laki-laki <strong>816 jiwa</strong> dan perempuan <strong>754 jiwa</strong>. Luasan wilayah yang begitu potensial saat ini sudah dikembangkan dengan baik oleh masyarakat Desa Popontolen. Terdapat <strong>569 keluarga</strong>. Keseharian masyarakat Desa Popontolen adalah bertani kesuburan tanah yang luas. Oleh karena itu, hampir sebagian besar penduduk di Desa Popontolen bermata pencaharian sebagai petani karena letak geografis yang sangat mendukung.
+          </p>
+
+          <div style="margin-left: 10px; margin-top: 8px;">
+            <strong>1. Batas Wilayah / Batas Desa</strong>
+            <ul class="formal-list formal-list-alpha">
+              <li><strong>Sebelah Utara:</strong> Berbatasan dengan Desa Sulu</li>
+              <li><strong>Sebelah Timur:</strong> Berbatasan dengan Desa Lelema</li>
+              <li><strong>Sebelah Selatan:</strong> Berbatasan dengan Desa Matani</li>
+              <li><strong>Sebelah Barat:</strong> Berbatasan dengan Desa Matani</li>
+            </ul>
+
+            <strong>2. Kondisi Geografis</strong>
+            <ul class="formal-list formal-list-alpha">
+              <li><strong>Ketinggian tanah dari permukaan laut:</strong> ± 3 mdpl</li>
+              <li><strong>Banyak curah hujan:</strong> 179 mm/thn</li>
+              <li><strong>Topografi:</strong> Rendah</li>
+              <li><strong>Suhu udara rata-rata:</strong> 25 – 30°C</li>
+            </ul>
+
+            <strong>3. Orbitrasi (Jarak dan Pusat Pemerintahan)</strong>
+            <ul class="formal-list formal-list-alpha">
+              <li><strong>Jarak dari pusat pemerintahan kecamatan:</strong> 6 km</li>
+              <li><strong>Jarak dari Ibukota Kabupaten Minahasa Selatan:</strong> 10 km</li>
+              <li><strong>Jarak dari Ibukota Provinsi Sulawesi Utara:</strong> 43 km</li>
+            </ul>
+          </div>
+
+          <!-- Sub 1.3 -->
+          <h3 class="section-title" id="sub1-3">1.3 Gambaran Umum Tata Kelola Desa Cantik di Desa/Kelurahan</h3>
+          <p class="doc-paragraph">
+            Berdasarkan surat dari BPS RI ketentuan untuk menjadi Desa Cinta Statistik (Desa Cantik) di Tahun 2026 akhirnya BPS Kabupaten Minahasa Selatan melakukan pembentukan Tim Desa Cinta Statistik (Desa Cantik) yang disahkan dengan SK Tim Desa Cinta Statistik (Desa Cantik) Kabupaten Minahasa Selatan. Setelah tim desa cantik terbentuk dilanjutkan dengan kegiatan rapat Tim. Dari hasil rapat dilanjutkan dengan membuat Surat pemberitahuan kegiatan desa cantik ke Pemerintah Daerah Kabupaten Minahasa Selatan untuk menentukan Desa/Kelurahan apa yang akan dijadikan Desa Cinta Statistik (Desa Cantik) di Kabupaten Minahasa Selatan. Dari hasil koordinasi dengan pemerintah daerah akhirnya ditunjuk Desa Popontolen Kecamatan Tumpaan menjadi pilihan dari Pemerintah Daerah. Setelah selesai berkoordinasi dengan Sekda dilanjutkan berkoordinasi dengan Camat Tumpaan dan menyampaikan bahwa Desa Popontolen akan mewakili Desa Cinta Statistik di Kabupaten Minahasa Selatan.
+          </p>
+
+          <p class="doc-paragraph">
+            Koordinasi dilanjutkan dengan Hukum Tua Desa Popontolen untuk menyampaikan hasil keputusan mengenai penunjukan Desa Popontolen untuk menjadi Desa Cinta Statistik (Desa Cantik) di tahun 2026 mewakili Kabupaten Minahasa Selatan. Dalam pertemuan juga dibahas mengenai penetapan agen statistik desa cantik sebagai <em>Brand Ambassador</em> yang akan lebih banyak berpartisipasi dalam kegiatan desa cantik yang ditunjuk langsung oleh kepala desa (SK terlampir).
+          </p>
+        </div>
+
+        <div class="page-sheet-footer">
+          <span class="footer-doc-info">Laporan Akhir Desa Cantik Popontolen 2026</span>
+          <span class="footer-page-num">1</span>
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           PAGE 5: BAB II PERSIAPAN PROGRAM DESA CANTIK
+           ==================================================================== -->
+      <article class="page-sheet page-bab-2" id="bab2">
+        <div class="sheet-content">
+          <div class="doc-header chapter-head">
+            <span class="chapter-badge">BAB II</span>
+            <h2 class="chapter-title">PERSIAPAN PROGRAM DESA CANTIK</h2>
+          </div>
+
+          <!-- Sub 2.1 -->
+          <h3 class="section-title" id="sub2-1">2.1 Rancangan Kegiatan Desa Cantik 2026</h3>
+          <p class="doc-paragraph">
+            Pembinaan Desa Cantik di Desa Popontolen, Kecamatan Tumpaan Kabupaten Minahasa Selatan direncanakan untuk dilaksanakan melalui beberapa tahapan seperti pada Tabel 1 Rencana Kerja Desa Cinta Statistik di bawah ini.
+          </p>
+
+          <div class="table-wrapper">
+            <div class="table-title">Tabel 1. Rencana Kerja Desa Cinta Statistik</div>
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th style="width: 8%;">No</th>
+                  <th style="width: 42%;">Rincian Kegiatan</th>
+                  <th style="width: 25%;">Tanggal Target</th>
+                  <th style="width: 25%;">Pelaksana</th>
+                </tr>
+                <tr class="subhead-row">
+                  <th>(1)</th>
+                  <th>(2)</th>
+                  <th>(3)</th>
+                  <th>(4)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-num">1.</td>
+                  <td>Koordinasi dengan Pemerintah Daerah</td>
+                  <td class="col-center">16 April 2026</td>
+                  <td>Tim Desa Cantik BPS</td>
+                </tr>
+                <tr>
+                  <td class="col-num">2.</td>
+                  <td>Koordinasi dengan Pemerintah Kecamatan Tumpaan</td>
+                  <td class="col-center">23 April 2026</td>
+                  <td>Tim Desa Cantik BPS</td>
+                </tr>
+                <tr>
+                  <td class="col-num">3.</td>
+                  <td>Koordinasi dengan Pemerintah Desa Popontolen</td>
+                  <td class="col-center">23 April 2026</td>
+                  <td>Tim Desa Cantik BPS</td>
+                </tr>
+                <tr>
+                  <td class="col-num">4.</td>
+                  <td>Pemilihan Agen Desa Cantik Desa Popontolen</td>
+                  <td class="col-center">06 Mei 2026</td>
+                  <td>Tim Desa Cantik BPS dan Pemerintah Desa Popontolen</td>
+                </tr>
+                <tr>
+                  <td class="col-num">5.</td>
+                  <td>Sosialisasi Desa Cantik Dengan Pemerintah Daerah</td>
+                  <td class="col-center">07 Mei 2026</td>
+                  <td>Tim Desa Cantik BPS</td>
+                </tr>
+                <tr>
+                  <td class="col-num">6.</td>
+                  <td>Pencanangan Desa Cinta Statistik Desa Popontolen</td>
+                  <td class="col-center">07 Mei 2026</td>
+                  <td>Tim Desa Cantik BPS</td>
+                </tr>
+                <tr>
+                  <td class="col-num">7.</td>
+                  <td>Identifikasi Desa Cinta Statistik Desa Popontolen</td>
+                  <td class="col-center">07 Mei 2026</td>
+                  <td>Agen Desa Cantik Desa Popontolen</td>
+                </tr>
+                <tr>
+                  <td class="col-num">8.</td>
+                  <td>Rapat Bersama Agen Desa Popontolen dalam pembuatan Publikasi Infografis Desa dan pembuatan Media Sosial (FB atau IG)</td>
+                  <td class="col-center">17 Juli 2026</td>
+                  <td>Agen Desa Cantik Desa Popontolen dan Tim Desa Cantik BPS Minsel</td>
+                </tr>
+                <tr>
+                  <td class="col-num">9.</td>
+                  <td>Rapat Agen Bersama Aparatur Desa</td>
+                  <td class="col-center">30 Juli 2026</td>
+                  <td>Agen Desa Cantik Desa Popontolen</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sub 2.2 -->
+          <h3 class="section-title" id="sub2-2">2.2 Kegiatan Sosialisasi/Pencanangan</h3>
+          <p class="doc-paragraph">
+            Kegiatan Sosialisasi dan Pencanangan Desa Cinta Statistik (Desa Cantik) Desa Popontolen dilaksanakan pada tanggal <strong>07 Mei 2026</strong> di mana kegiatan dihadiri oleh Bupati Kabupaten Minahasa Selatan, Kepala Dinas PMD, Hukum Tua, Sekdes dan Kepala Jaga serta Agen Desa Cantik Desa Popontolen.
+          </p>
+          <p class="doc-paragraph">
+            Kegiatan pencanangan Desa Cinta Statistik Desa Popontolen dicanangkan secara resmi oleh Kepala Dinas dan disaksikan oleh Ketua Tim Desa Cantik BPS Provinsi Sulawesi Utara, Kepala BPS Kabupaten Minahasa Selatan, Camat Tumpaan, dan Kepala Desa Popontolen beserta agen statistik dan perangkat desa (undangan, laporan dan dokumen lainnya terlampir).
+          </p>
+
+          <!-- Sub 2.3 -->
+          <h3 class="section-title" id="sub2-3">2.3 Kegiatan Pelatihan Pembinaan Statistik Desa Popontolen</h3>
+          <p class="doc-paragraph-noindent">
+            Kegiatan Pembinaan Statistik Desa di Desa Popontolen dilaksanakan dalam <strong>2 (dua) tahap pembinaan utama</strong> sebagai berikut:
+          </p>
+
+          <div style="margin-left: 10px; margin-top: 10px;">
+            <h4 class="subsection-title">1. Pembinaan Tahap I</h4>
+            <ul class="formal-list">
+              <li><strong>Hari / Tanggal:</strong> Kamis, 7 Mei 2026</li>
+              <li><strong>Tempat:</strong> Kantor Desa Popontolen</li>
+              <li><strong>Peserta:</strong> Aparatur Desa, Agen Statistik Desa, serta Tokoh Masyarakat Desa Popontolen</li>
+              <li><strong>Materi Pembinaan:</strong>
+                <ol class="formal-list-num" style="margin-top: 4px;">
+                  <li><strong>Identifikasi Kebutuhan Desa:</strong> Pemetaan ketersediaan data, penentuan prioritas indikator statistik desa, dan identifikasi masalah statistik sektoral tingkat desa.</li>
+                  <li><strong>Pengumpulan Data:</strong> Metodologi pengumpulan data sekunder maupun primer secara terstruktur di tingkat lingkungan/jaga.</li>
+                  <li><strong>Sosialisasi Kegiatan Sensus Ekonomi 2026:</strong> Edukasi dan pemahaman awal mengenai urgensi, alur, serta persiapan pelaksanaan Sensus Ekonomi tahun 2026.</li>
+                  <li><strong>Sosialisasi DTSEN:</strong> Pengenalan dan pentingnya Data Tunggal Sosial Ekonomi Nasional (DTSEN) untuk integrasi program perlindungan sosial dan pembangunan.</li>
+                </ol>
+              </li>
+            </ul>
+
+            <h4 class="subsection-title">2. Pembinaan Tahap II</h4>
+            <ul class="formal-list">
+              <li><strong>Hari / Tanggal:</strong> Jumat, 17 Juli 2026</li>
+              <li><strong>Tempat:</strong> Kantor Desa Popontolen</li>
+              <li><strong>Peserta:</strong> Agen Statistik Desa dan Aparatur Desa Popontolen</li>
+              <li><strong>Materi Pembinaan:</strong>
+                <ol class="formal-list-num" style="margin-top: 4px;">
+                  <li><strong>Cara Pengolahan Data:</strong> Teknik pembersihan (<em>data cleaning</em>), pengkodean, entri data, serta tabulasi data statistik desa menggunakan perangkat lunak/spreadsheet.</li>
+                  <li><strong>Cara Penyajian Data:</strong> Penyusunan teknik visualisasi data yang informatif melalui pembuatan Monografi Desa, Publikasi Desa Dalam Angka, hingga penyusunan Infografis yang mudah dipahami oleh masyarakat umum.</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sub 2.4 -->
+          <h3 class="section-title" id="sub2-4">2.4 Anggaran Program Desa Cantik</h3>
+          <p class="doc-paragraph">
+            Kegiatan Desa Cinta Statistik (Desa Cantik) untuk anggaran masih menggunakan <strong>DIPA BPS Kabupaten Minahasa Selatan</strong>, di mana untuk ketersediaan anggaran di Desa belum ada alokasi khusus mengenai kegiatan Desa Cantik (dokumen anggaran terlampir).
+          </p>
+        </div>
+
+        <div class="page-sheet-footer">
+          <span class="footer-doc-info">Laporan Akhir Desa Cantik Popontolen 2026</span>
+          <span class="footer-page-num">6</span>
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           PAGE 6: BAB III PEMBINAAN DAN PENDAMPINGAN
+           ==================================================================== -->
+      <article class="page-sheet page-bab-3" id="bab3">
+        <div class="sheet-content">
+          <div class="doc-header chapter-head">
+            <span class="chapter-badge">BAB III</span>
+            <h2 class="chapter-title">PEMBINAAN DAN PENDAMPINGAN DESA CANTIK</h2>
+          </div>
+
+          <!-- Sub 3.1 -->
+          <h3 class="section-title" id="sub3-1">3.1 Gambaran Umum Realisasi Pembinaan Desa Cantik</h3>
+          <p class="doc-paragraph">
+            Realisasi kegiatan pembinaan Desa Cantik difokuskan pada peningkatan literasi, kapasitas, dan kemandirian perangkat desa serta Agen Statistik Desa dalam mengelola seluruh tahapan rantai data statistik. Secara umum, realisasi pembinaan mencakup beberapa tahapan utama:
+          </p>
+
+          <ol class="formal-list-num" style="margin-left: 20px;">
+            <li><strong>Pengumpulan Data Profil Desa (Desa Dalam Angka)</strong>
+              <ul style="list-style-type: circle; margin-left: 20px; margin-top: 4px;">
+                <li>Realisasi pengumpulan data sekunder maupun data lapangan yang mencakup potensi wilayah, demografi, sosial, dan ekonomi desa.</li>
+                <li>Pendampingan kepada aparat desa dan agen statistik dalam mengkompilasi data dari level lingkungan/jaga.</li>
+              </ul>
+            </li>
+            <li style="margin-top: 8px;"><strong>Pembuatan Publikasi Desa Dalam Angka</strong>
+              <ul style="list-style-type: circle; margin-left: 20px; margin-top: 4px;">
+                <li>Menyusun dan mendokumentasikan data hasil pengumpulan ke dalam bentuk buku publikasi resmi (<em>Desa Dalam Angka</em>).</li>
+                <li>Melakukan pembersihan (<em>data cleaning</em>), tabulasi, dan konsolidasi data agar sesuai dengan standar Satu Data Indonesia.</li>
+              </ul>
+            </li>
+            <li style="margin-top: 8px;"><strong>Penyusunan Media Infografis</strong>
+              <ul style="list-style-type: circle; margin-left: 20px; margin-top: 4px;">
+                <li>Mengolah data kompleks menjadi tampilan visual/infografis yang menarik, ringkas, dan mudah dipahami oleh masyarakat umum maupun pemangku kepentingan.</li>
+              </ul>
+            </li>
+            <li style="margin-top: 8px;"><strong>Pengembangan dan Pengelolaan Website/Portal Desa</strong>
+              <ul style="list-style-type: circle; margin-left: 20px; margin-top: 4px;">
+                <li>Membangun atau mengoptimalkan media digital desa (website/media sosial) untuk menyajikan data statistik desa secara transparan dan mudah diakses.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <!-- Matriks Realisasi -->
+          <div class="table-wrapper">
+            <div class="table-title">Matriks Tahapan Realisasi Pembinaan</div>
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th style="width: 8%;">No</th>
+                  <th style="width: 32%;">Rincian Kegiatan</th>
+                  <th style="width: 30%;">Pelaksana</th>
+                  <th style="width: 30%;">Output / Hasil</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-num">1</td>
+                  <td><strong>Identifikasi & Pengumpulan Data</strong></td>
+                  <td>Agen Desa Cantik & Aparat Desa</td>
+                  <td>Terkumpulnya data profil dasar desa dan potensi wilayah.</td>
+                </tr>
+                <tr>
+                  <td class="col-num">2</td>
+                  <td><strong>Pengolahan & Tabulasi Data</strong></td>
+                  <td>Agen Desa Cantik dibantu Tim BPS</td>
+                  <td>Data yang valid dan siap disajikan dalam format standar.</td>
+                </tr>
+                <tr>
+                  <td class="col-num">3</td>
+                  <td><strong>Penyusunan Publikasi & Infografis</strong></td>
+                  <td>Agen Desa Cantik & Tim BPS</td>
+                  <td>Draft Publikasi Desa Dalam Angka dan ringkasan visual.</td>
+                </tr>
+                <tr>
+                  <td class="col-num">4</td>
+                  <td><strong>Penyajian & Pemanfaatan Data</strong></td>
+                  <td>Pemerintah Desa & Agen Desa Cantik</td>
+                  <td>Website Desa / Monografi Desa untuk mendukung RKP Desa & RPJM Desa.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sub 3.2 s/d 3.7 -->
+          <h3 class="section-title" id="sub3-2">3.2 Pengumpulan / Inventarisasi Data</h3>
+          <p class="doc-paragraph">
+            Pengumpulan data secara sekunder dikarenakan data yang digunakan adalah data profil desa di tahun 2024 dan tahun 2025, dikarenakan data 2026 belum tersedia karena masih dalam pengumpulan data yang dilaksanakan oleh aparatur desa di kegiatan SDGs yang masih berjalan.
+          </p>
+
+          <h3 class="section-title" id="sub3-3">3.3 Pengolahan Data</h3>
+          <p class="doc-paragraph">
+            Kegiatan pengolahan dilakukan oleh Agen Desa Cantik, di mana Pembina Desa Cantik BPS Kabupaten Minahasa Selatan berperan sebagai pendamping disaat ada permasalahan dalam pengolahan data atau pengisian di WEBSITE desa.
+          </p>
+
+          <h3 class="section-title" id="sub3-4">3.4 Penyajian Data</h3>
+          <p class="doc-paragraph">
+            Kegiatan dan hasil penyajian data yang dilakukan pada program Desa Cantik di Desa Popontolen oleh agen statistik dapat berupa Monografi Desa Popontolen, Profil Desa Popontolen, Infografis Data Sektoral, Buku publikasi statistik resmi, atau Website Desa Popontolen yang menyajikan data statistik secara terbuka (dokumen terlampir).
+          </p>
+
+          <h3 class="section-title" id="sub3-5">3.5 Pemanfaatan Data</h3>
+          <p class="doc-paragraph">
+            Pemanfaatan data Desa Popontolen sangat bermanfaat bagi berbagai pihak, di antaranya pemanfaatan oleh Pemerintah Desa Popontolen dalam merancang dokumen perencanaan desa (RKP Desa / RPJM Desa), pemanfaatan oleh Pemerintah Daerah dalam penyelarasan program bantuan, serta pemanfaatan oleh pihak swasta maupun kegiatan riset/penelitian (dokumen terlampir).
+          </p>
+
+          <h3 class="section-title" id="sub3-6">3.6 Manajemen Data di Desa Popontolen</h3>
+          <p class="doc-paragraph">
+            Ada beberapa hal yang sangat penting dalam manajemen data yaitu keragaman data yang ada di Desa Popontolen, penerapan prinsip Satu Data Indonesia (SDI), standarisasi metadata statistik, serta perluasan aksesibilitas data dan informasi bagi seluruh elemen masyarakat desa/kelurahan.
+          </p>
+        </div>
+
+        <div class="page-sheet-footer">
+          <span class="footer-doc-info">Laporan Akhir Desa Cantik Popontolen 2026</span>
+          <span class="footer-page-num">9</span>
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           PAGE 7: BAB IV PENUTUP
+           ==================================================================== -->
+      <article class="page-sheet page-bab-4" id="bab4">
+        <div class="sheet-content">
+          <div class="doc-header chapter-head">
+            <span class="chapter-badge">BAB IV</span>
+            <h2 class="chapter-title">PENUTUP</h2>
+          </div>
+
+          <!-- Sub 4.1 -->
+          <h3 class="section-title" id="sub4-1">4.1 GAMBARAN KENDALA DAN SOLUSI</h3>
+          
+          <div style="margin-left: 10px; margin-top: 10px;">
+            <h4 class="subsection-title">1. Keterbatasan Sumber Daya Manusia (SDM) dan Literasi Data</h4>
+            <ul class="formal-list">
+              <li><strong>Kendala:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Masih terbatasnya pemahaman teknis aparatur desa dan kader terkait istilah-istilah statistik serta metodologi pengumpulan data.</li>
+                  <li>Adanya perbedaan persepsi dan ketidakpahaman dari beberapa Kepala Jaga/Meweteng saat mengumpulkan data di tingkat lingkungan.</li>
+                </ul>
+              </li>
+              <li style="margin-top: 6px;"><strong>Solusi:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Menyelenggarakan pelatihan dan bimbingan teknis (<em>coaching</em>) secara bertahap bagi Agen Statistik Desa dan aparatur desa.</li>
+                  <li>Pembina Desa Cantik dari BPS bersama Agen Statistik melakukan pertemuan pendampingan langsung untuk memberikan penjelasan mengenai definisi operasional dan istilah statistik.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h4 class="subsection-title">2. Ketersediaan dan Pengelolaan Data Desa</h4>
+            <ul class="formal-list">
+              <li><strong>Kendala:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Kelengkapan data variabel desa masih belum seragam, di mana sebagian data sektor publik sudah tersedia namun sebagian lainnya belum terdokumentasi dengan baik.</li>
+                  <li>Sistem penyimpanan data sebelumnya masih bersifat parsial/manual sehingga berisiko hilang atau sulit diakses kembali saat dibutuhkan.</li>
+                </ul>
+              </li>
+              <li style="margin-top: 6px;"><strong>Solusi:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Menerapkan mekanisme pengolahan dan tabulasi data secara terstruktur menggunakan aplikasi spreadsheet sederhana atau sistem pencatatan terpusat.</li>
+                  <li>Mengoptimalkan inventarisasi data profil desa agar selaras dengan prinsip Satu Data Indonesia (SDI).</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h4 class="subsection-title">3. Infrastruktur Teknologi Informasi</h4>
+            <ul class="formal-list">
+              <li><strong>Kendala:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Ketersediaan sarana pendukung (seperti komputer dan jaringan internet) di tingkat desa belum sepenuhnya optimal untuk mendukung pengolahan data digital secara cepat.</li>
+                </ul>
+              </li>
+              <li style="margin-top: 6px;"><strong>Solusi:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Menggabungkan metode pendataan secara <em>offline</em> (manual/kertas) terlebih dahulu, kemudian diolah dan diunggah secara berkala ketika akses sistem/perangkat tersedia.</li>
+                  <li>Mendorong pemanfaatan fasilitas internet kantor desa secara efisien untuk pembuatan media penyajian data digital (website/infografis desa).</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h4 class="subsection-title">4. Kesadaran dan Partisipasi Masyarakat</h4>
+            <ul class="formal-list">
+              <li><strong>Kendala:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Sebagian masyarakat belum menyadari penuh pentingnya akurasi data statistik, sehingga partisipasi saat pendataan pendukung terkadang kurang maksimal.</li>
+                </ul>
+              </li>
+              <li style="margin-top: 6px;"><strong>Solusi:</strong>
+                <ul style="list-style-type: circle; margin-left: 20px;">
+                  <li>Mengintegrasikan sosialisasi literasi data ke dalam pertemuan warga atau kegiatan resmi desa.</li>
+                  <li>Melibatkan tokoh masyarakat dan perangkat desa terdepan untuk memberikan pemahaman bahwa data akurat akan bermuara pada program pembangunan desa yang lebih tepat sasaran.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Matriks Kendala dan Solusi -->
+          <div class="table-wrapper" id="matriksKendala" style="margin-top: 24px;">
+            <div class="table-title">III. TABEL MATRIKS KENDALA DAN SOLUSI</div>
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th style="width: 8%;">No</th>
+                  <th style="width: 24%;">Bidang Kendala</th>
+                  <th style="width: 34%;">Permasalahan Utama</th>
+                  <th style="width: 34%;">Solusi / Langkah Tindak Lanjut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-num">1</td>
+                  <td><strong>SDM & Pemahaman</strong></td>
+                  <td>Kurang memahami istilah/istilah teknis statistik.</td>
+                  <td>Pendampingan intensif dari Pembina BPS & Agen Desa.</td>
+                </tr>
+                <tr>
+                  <td class="col-num">2</td>
+                  <td><strong>Kelengkapan Data</strong></td>
+                  <td>Sebagian data belum tersedia / belum terintegrasi.</td>
+                  <td>Inventarisasi data profil desa & standarisasi format data.</td>
+                </tr>
+                <tr>
+                  <td class="col-num">3</td>
+                  <td><strong>Infrastruktur / IT</strong></td>
+                  <td>Sarana digital & konektivitas belum memadai.</td>
+                  <td>Pengolahan bertahap (<em>offline-to-online</em>) & optimalisasi sarana desa.</td>
+                </tr>
+                <tr>
+                  <td class="col-num">4</td>
+                  <td><strong>Pengelolaan Data</strong></td>
+                  <td>Data belum terstruktur rapi.</td>
+                  <td>Penerapan manajemen data & pembuatan publikasi infografis.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sub 4.2 -->
+          <h3 class="section-title" id="sub4-2" style="margin-top: 28px;">4.2 Kesimpulan dan Saran</h3>
+          
+          <h4 class="subsection-title">Kesimpulan:</h4>
+          <p class="doc-paragraph">
+            Kegiatan Desa Cinta Statistik (Desa Cantik) merupakan program strategis dari BPS untuk meningkatkan kapasitas desa dalam mengelola dan memanfaatkan data statistik. Tujuannya adalah agar desa-desa memiliki kemampuan mengumpulkan, mengelola, dan menggunakan data secara mandiri sebagai dasar dalam perencanaan dan pengambilan kebijakan yang lebih efektif. Meskipun program ini dihadapkan pada berbagai kendala seperti keterbatasan sumber daya manusia, infrastruktur teknologi, partisipasi masyarakat, dan pengelolaan data, solusi yang tepat dapat mengatasi tantangan tersebut. Dengan pelatihan, peningkatan akses teknologi, serta sosialisasi yang efektif, desa-desa diharapkan dapat mencapai kemandirian dalam pengelolaan data dan memanfaatkannya untuk pembangunan yang lebih baik.
+          </p>
+
+          <h4 class="subsection-title" style="margin-top: 14px;">Saran:</h4>
+          <ol class="formal-list-num" style="margin-left: 20px;">
+            <li><strong>Perluasan Jangkauan Pelatihan:</strong> BPS sebaiknya memperluas cakupan pelatihan statistik hingga ke seluruh perangkat desa dan melibatkan relawan lokal. Penggunaan modul yang mudah dipahami akan sangat membantu meningkatkan pemahaman.</li>
+            <li><strong>Penguatan Infrastruktur Teknologi:</strong> Pemerintah dan pihak terkait perlu bekerja sama untuk meningkatkan akses teknologi di desa, seperti menyediakan komputer dan akses internet yang memadai, terutama di desa terpencil.</li>
+            <li><strong>Sosialisasi yang Lebih Intensif:</strong> Sosialisasi tentang pentingnya data statistik harus dilakukan secara lebih intensif dengan melibatkan tokoh masyarakat dan media lokal untuk mendorong partisipasi aktif warga dalam pendataan.</li>
+            <li><strong>Monitoring dan Evaluasi Berkelanjutan:</strong> Implementasi program Desa Cantik perlu didukung oleh monitoring dan evaluasi secara berkala untuk memastikan pengelolaan data berjalan dengan baik dan sesuai tujuan awal, serta mengidentifikasi area yang perlu ditingkatkan.</li>
+          </ol>
+        </div>
+
+        <div class="page-sheet-footer">
+          <span class="footer-doc-info">Laporan Akhir Desa Cantik Popontolen 2026</span>
+          <span class="footer-page-num">12</span>
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           PAGE 8: LAMPIRAN COVER
+           ==================================================================== -->
+      <article class="page-sheet lampiran-cover-sheet" id="lampiranCover">
+        <div class="lampiran-cover-inner">
+          <div class="cover-top-ribbon-sub"></div>
+          <div class="cover-top-ribbon"></div>
+          <div class="cover-bottom-ribbon-sub"></div>
+          <div class="cover-bottom-ribbon"></div>
+
+          <h1 class="lampiran-title">LAMPIRAN</h1>
+          <p class="lampiran-subtitle">Dokumentasi Kegiatan & Keputusan Terkait</p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

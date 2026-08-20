@@ -1,0 +1,948 @@
+/* ==========================================================================
+   LAPORAN AKHIR PEMBINAAN DESA CANTIK DESA POPONTOLEN TAHUN 2026
+   Modern Government Report & Interactive Document System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Merriweather', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palette - Official BPS & Modern Civic Theme */
+  --bps-navy: #0B2B5C;
+  --bps-blue: #0072BC;
+  --bps-cyan: #00AEEF;
+  --bps-orange: #F37021;
+  --bps-green: #2E7D32;
+  --bps-emerald: #10B981;
+  --bps-red: #D32F2F;
+  --bps-crimson: #B71C1C;
+  
+  --bg-app: #F1F5F9;
+  --bg-sheet: #FFFFFF;
+  --bg-sidebar: #0F172A;
+  --bg-card: #F8FAFC;
+  --bg-subtle: #F3F4F6;
+  
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --text-heading: #0F172A;
+  --text-light: #F8FAFC;
+  
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-focus: #3B82F6;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-sheet: 0 15px 35px -5px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --page-width: 210mm;
+  --page-min-height: 297mm;
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+  --bg-app: #090D16;
+  --bg-sheet: #111827;
+  --bg-card: #1F2937;
+  --bg-subtle: #1E293B;
+  --text-main: #E2E8F0;
+  --text-muted: #94A3B8;
+  --text-heading: #F8FAFC;
+  --border-light: #334155;
+  --border-medium: #475569;
+  --shadow-sheet: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   APP HEADER & CONTROLS TOOLBAR (Web view only)
+   ========================================================================== */
+.app-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-badge {
+  background: linear-gradient(135deg, #F37021, #D32F2F);
+  color: #FFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.topbar-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
+
+.topbar-subtitle {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .topbar-subtitle {
+    display: inline;
+  }
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0072BC, #0B2B5C);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 114, 188, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #008be5, #123d80);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 114, 188, 0.5);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #FFF;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #34D399, #10B981);
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+}
+
+/* ==========================================================================
+   APP SIDEBAR (Daftar Isi Dinamis)
+   ========================================================================== */
+.app-sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: var(--bg-sidebar);
+  color: #E2E8F0;
+  padding: 24px 16px;
+  overflow-y: auto;
+  z-index: 900;
+  transform: translateX(0);
+  transition: var(--transition);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar-header {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: #94A3B8;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toc-item a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: #CBD5E1;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.toc-item a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFF;
+  padding-left: 16px;
+}
+
+.toc-item.active a {
+  background: rgba(0, 114, 188, 0.25);
+  color: #38BDF8;
+  font-weight: 700;
+  border-left: 3px solid #38BDF8;
+}
+
+.toc-sublist {
+  list-style: none;
+  padding-left: 14px;
+  margin: 4px 0 6px;
+  border-left: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toc-sublist a {
+  font-size: 0.76rem;
+  padding: 5px 10px;
+  color: #94A3B8;
+}
+
+.toc-sublist a:hover {
+  color: #F1F5F9;
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA & PAGE CONTAINER
+   ========================================================================== */
+.main-wrapper {
+  margin-top: 64px;
+  margin-left: 300px;
+  flex: 1;
+  padding: 40px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.main-wrapper.full-width {
+  margin-left: 0;
+}
+
+/* Document Sheet Simulation (A4 Pages) */
+.document-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+}
+
+.page-sheet {
+  background: var(--bg-sheet);
+  width: 100%;
+  max-width: var(--page-width);
+  min-height: var(--page-min-height);
+  padding: 25mm 20mm 20mm 25mm; /* Standard formal office margin */
+  box-shadow: var(--shadow-sheet);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.page-sheet.cover-sheet {
+  padding: 0; /* Cover has full bleed dynamic graphic background */
+}
+
+/* Quick Statistics Grid for Interactive Mode */
+.quick-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--bps-blue);
+}
+
+.stat-card .stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--bps-navy);
+  line-height: 1.2;
+}
+
+body.dark-mode .stat-card .stat-val {
+  color: #38BDF8;
+}
+
+.stat-card .stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   COVER PAGE DESIGN (Identik Resmi BPS Modern)
+   ========================================================================== */
+.cover-inner {
+  height: 100%;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: #FAFBFC;
+  padding: 20mm 18mm;
+  box-sizing: border-box;
+}
+
+/* Dynamic Ribbon Wave Graphic Elements */
+.cover-top-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(135deg, #B71C1C 0%, #D32F2F 45%, #E53935 70%, #90A4AE 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 75% 85%, 0 45%);
+  z-index: 1;
+}
+
+.cover-top-ribbon-sub {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 190px;
+  background: linear-gradient(135deg, #CFD8DC 0%, #90A4AE 40%, #546E7A 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 40% 65%, 0 95%);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.cover-bottom-ribbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(135deg, #B71C1C 0%, #E53935 60%, #90A4AE 100%);
+  clip-path: polygon(0 45%, 35% 20%, 100% 55%, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.cover-bottom-ribbon-sub {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(135deg, #CFD8DC 0%, #78909C 60%, #37474F 100%);
+  clip-path: polygon(0 60%, 65% 30%, 100% 40%, 100% 100%, 0 100%);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Logos Header Bar */
+.cover-logos-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+}
+
+.logo-item img, .logo-item svg {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Cover Center Titles */
+.cover-main-content {
+  position: relative;
+  z-index: 10;
+  margin: auto 0;
+  text-align: center;
+  padding: 40px 10px;
+}
+
+.cover-title-badge {
+  display: inline-block;
+  background: rgba(0, 114, 188, 0.08);
+  color: var(--bps-blue);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 114, 188, 0.2);
+}
+
+.cover-title-main {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: 2px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.cover-title-sub {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #1E293B;
+  letter-spacing: 1.5px;
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+.cover-title-desa {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #B45309, #D97706, #EA580C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+}
+
+.cover-year-tag {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #0F172A;
+  letter-spacing: 4px;
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   DOCUMENT BODY TYPOGRAPHY & SECTIONS
+   ========================================================================== */
+.sheet-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.doc-header h1 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  letter-spacing: -0.3px;
+}
+
+.doc-header.chapter-head {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 26px;
+  border-bottom: none;
+}
+
+.chapter-badge {
+  display: inline-block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--bps-navy);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+body.dark-mode .chapter-badge {
+  color: #60A5FA;
+}
+
+.chapter-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--bps-navy);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+body.dark-mode .section-title {
+  color: #93C5FD;
+}
+
+.subsection-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+p.doc-paragraph {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 14px;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-main);
+  text-indent: 28px; /* Standard formal paragraph indentation */
+}
+
+p.doc-paragraph-noindent {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 14px;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-main);
+}
+
+/* Formal Lists */
+.formal-list {
+  margin: 10px 0 16px 20px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.formal-list li {
+  margin-bottom: 6px;
+  padding-left: 4px;
+}
+
+.formal-list-alpha {
+  list-style-type: lower-alpha;
+  margin-left: 24px;
+}
+
+.formal-list-num {
+  list-style-type: decimal;
+  margin-left: 24px;
+}
+
+/* ==========================================================================
+   OFFICIAL TABLES & MATRICES
+   ========================================================================== */
+.table-wrapper {
+  width: 100%;
+  margin: 18px 0 24px;
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+}
+
+.table-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-heading);
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.doc-table th, .doc-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-medium);
+  vertical-align: top;
+}
+
+.doc-table thead th {
+  background-color: #E2E8F0;
+  color: #0F172A;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+body.dark-mode .doc-table thead th {
+  background-color: #334155;
+  color: #F8FAFC;
+}
+
+.doc-table tbody tr:nth-child(even) {
+  background-color: var(--bg-subtle);
+}
+
+.doc-table tbody tr:hover {
+  background-color: rgba(0, 114, 188, 0.05);
+}
+
+.doc-table .col-center {
+  text-align: center;
+}
+
+.doc-table .col-num {
+  text-align: center;
+  font-weight: 600;
+  width: 45px;
+}
+
+.doc-table .subhead-row {
+  background-color: #F1F5F9;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+body.dark-mode .doc-table .subhead-row {
+  background-color: #1E293B;
+}
+
+/* ==========================================================================
+   SIGNATURE SECTION (Kata Pengantar)
+   ========================================================================== */
+.signature-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  break-inside: avoid;
+}
+
+.signature-box {
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+.sig-date {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.sig-role {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.sig-graphic-area {
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.sig-stamp-img {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  width: 140px;
+  height: 90px;
+  object-fit: contain;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.sig-name {
+  font-size: 0.96rem;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--text-heading);
+}
+
+.sig-nip {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   DAFTAR ISI PAGE
+   ========================================================================== */
+.toc-doc-table {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.toc-doc-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.toc-doc-row.level-1 {
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-top: 12px;
+}
+
+.toc-doc-row.level-2 {
+  padding-left: 20px;
+  font-size: 0.92rem;
+  color: var(--text-main);
+}
+
+.toc-doc-row.level-3 {
+  padding-left: 40px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.toc-doc-title {
+  flex-shrink: 0;
+}
+
+.toc-doc-dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--border-medium);
+  margin: 0 10px;
+  transform: translateY(-4px);
+}
+
+.toc-doc-page {
+  flex-shrink: 0;
+  font-weight: 600;
+  min-width: 25px;
+  text-align: right;
+}
+
+/* ==========================================================================
+   PAGE FOOTER / RUNNING NUMBERS
+   ========================================================================== */
+.page-sheet-footer {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-doc-info {
+  font-style: italic;
+}
+
+.footer-page-num {
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* ==========================================================================
+   LAMPIRAN COVER PAGE
+   ========================================================================== */
+.lampiran-cover-inner {
+  height: 100%;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #FAFBFC;
+}
+
+.lampiran-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: #C2410C;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px rgba(194, 65, 12, 0.2);
+  z-index: 10;
+}
+
+.lampiran-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Mobile & Tablet UI)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .app-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.4);
+  }
+  
+  .main-wrapper {
+    margin-left: 0;
+    padding: 20px 10px;
+  }
+  
+  .page-sheet {
+    padding: 20mm 15mm;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-sheet {
+    padding: 15mm 10mm;
+    min-height: auto;
+  }
+  
+  .cover-title-main {
+    font-size: 1.6rem;
+  }
+  
+  .cover-title-sub {
+    font-size: 1.3rem;
+  }
+  
+  .cover-title-desa {
+    font-size: 1.7rem;
+  }
+  
+  .cover-logos-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .cover-logos-bar .logo-item img,
+  .cover-logos-bar .logo-item svg {
+    height: 32px;
+  }
+}

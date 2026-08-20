@@ -1,0 +1,167 @@
+/* ==========================================================================
+   PRINT STYLESHEET - PERFECT A4 GOVERNMENT REPORT PDF EXPORT
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 15mm 15mm 15mm 15mm;
+}
+
+@page :first {
+  margin: 0;
+}
+
+@media print {
+  /* Hide all Web App UI elements */
+  .no-print,
+  .app-topbar,
+  .app-sidebar,
+  .quick-stats-grid,
+  .floating-controls,
+  .btn,
+  .toc-toggle {
+    display: none !important;
+  }
+
+  /* Reset layout constraints */
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .main-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .document-container {
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Page Sheet formatting in print mode */
+  .page-sheet {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 10mm 15mm 12mm 15mm !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    background: #FFFFFF !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Cover Page print layout */
+  .page-sheet.cover-sheet {
+    padding: 0 !important;
+    min-height: 297mm !important;
+    height: 297mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .cover-inner {
+    min-height: 297mm !important;
+    height: 297mm !important;
+    padding: 18mm 16mm !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Specific Break Points */
+  .page-kata-pengantar {
+    page-break-before: always !important;
+    break-before: page !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .page-daftar-isi {
+    page-break-before: always !important;
+    break-before: page !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .page-bab-1,
+  .page-bab-2,
+  .page-bab-3,
+  .page-bab-4,
+  .page-lampiran-cover {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .lampiran-cover-sheet {
+    min-height: 297mm !important;
+    page-break-before: always !important;
+    page-break-after: always !important;
+    break-before: page !important;
+    break-after: page !important;
+  }
+
+  /* Prevent orphaned elements & break inside blocks */
+  h1, h2, h3, h4, .chapter-badge, .section-title, .doc-header {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  p.doc-paragraph, p.doc-paragraph-noindent {
+    orphans: 3;
+    widows: 3;
+    font-size: 11pt !important;
+    line-height: 1.55 !important;
+  }
+
+  .table-wrapper {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin: 12px 0 16px !important;
+  }
+
+  .doc-table {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    font-size: 9.5pt !important;
+  }
+
+  .doc-table th, .doc-table td {
+    padding: 6px 8px !important;
+  }
+
+  .signature-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-top: 24px !important;
+  }
+
+  .page-sheet-footer {
+    border-top: 1px solid #CBD5E1 !important;
+    padding-top: 6px !important;
+    font-size: 8.5pt !important;
+  }
+
+  /* Cover ribbons color fidelity */
+  .cover-top-ribbon,
+  .cover-bottom-ribbon,
+  .cover-top-ribbon-sub,
+  .cover-bottom-ribbon-sub {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
