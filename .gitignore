@@ -15,3 +15,14 @@ $RECYCLE.BIN/
 node_modules/
 dist/
 build/
+
+# Overleaf ZIP package & LaTeX build outputs
+latex/Laporan_Desa_Cantik_Overleaf.zip
+*.zip
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
