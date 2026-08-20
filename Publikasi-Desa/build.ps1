@@ -110,22 +110,31 @@ $indexHeader = @"
           <ul class="toc-sublist">
             <li><a href="#sub1-1">1.1 Penduduk per Jaga (Tabel 1)</a></li>
             <li><a href="#sub1-2">1.2 Kelompok Umur (Tabel 2)</a></li>
+            <li><a href="#sub1-3">1.3 Penyandang Disabilitas (Tabel 3)</a></li>
           </ul>
         </li>
         <li class="toc-item">
           <a href="#bab2"><span>2. Keluarga & Mata Pencaharian</span><small>4</small></a>
           <ul class="toc-sublist">
-            <li><a href="#tabel3">Tabel 3. Pekerjaan Utama</a></li>
+            <li><a href="#sub2-1">2.1 Pekerjaan Utama (Tabel 4)</a></li>
           </ul>
         </li>
         <li class="toc-item">
-          <a href="#bab3"><span>3. Fasilitas & Infrastruktur</span><small>6</small></a>
+          <a href="#bab3"><span>3. Fasilitas & Infrastruktur</span><small>5</small></a>
           <ul class="toc-sublist">
-            <li><a href="#tabel4">Tabel 4. Fasilitas Desa</a></li>
+            <li><a href="#sub3-1">3.1 Akses Kelistrikan (Tabel 5)</a></li>
+            <li><a href="#sub3-2">3.2 Fasilitas Pendidikan (Tabel 6)</a></li>
+            <li><a href="#sub3-3">3.3 Fasilitas Kesehatan (Tabel 7)</a></li>
+            <li><a href="#sub3-4">3.4 Komunikasi & BTS (Tabel 8)</a></li>
+            <li><a href="#sub3-5">3.5 Fasilitas Perbankan</a></li>
+            <li><a href="#sub3-6">3.6 Fasilitas Ekonomi (Tabel 9)</a></li>
           </ul>
         </li>
         <li class="toc-item">
           <a href="#bab4"><span>4. Penutup & Rekomendasi</span><small>8</small></a>
+          <ul class="toc-sublist">
+            <li><a href="#sub4-1">4.1 Rekomendasi Pembangunan</a></li>
+          </ul>
         </li>
         <li class="toc-item">
           <a href="#coverBelakang"><span>Cover Belakang</span></a>
