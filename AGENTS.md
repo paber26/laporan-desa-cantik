@@ -25,21 +25,21 @@ File ini adalah instruksi permanen (Project Memory & System Guidelines) untuk AI
 
 ## 🔄 2. Alur Kerja Dua Tahap (Dual-Stage Architecture)
 
-Proyek ini dipisahkan secara tegas menjadi 2 tahap di dalam folder `Laporan Akhir/`:
+Proyek ini dipisahkan secara tegas menjadi 2 tahap di dalam folder `Laporan-Akhir/`:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ TAHAP 1: EDITING, PENGISIAN & DRAFTING (HTML MODULAR)                   │
-│ - Edit file per-bab di folder Laporan Akhir/sections/ (*.html)          │
-│ - Jalankan Laporan Akhir/build.bat (atau build.ps1) untuk update HTML   │
-│ - Buka / Live Preview di Laporan Akhir/index.html atau print.html       │
+│ - Edit file per-bab di folder Laporan-Akhir/sections/ (*.html)          │
+│ - Jalankan Laporan-Akhir/build.bat (atau build.ps1) untuk update HTML   │
+│ - Buka / Live Preview di Laporan-Akhir/index.html atau print.html       │
 └────────────────────────────────────┬────────────────────────────────────┘
                                      │ (Setelah seluruh isi dokumen fix)
                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ TAHAP 2: FINALISASI & PUBLIKASI RESMI (LATEX / OVERLEAF)                │
-│ - Sesuaikan perubahan teks ke Laporan Akhir/latex/sections/ (*.tex)     │
-│ - Jalankan Laporan Akhir/latex/package_overleaf.bat untuk membuat ZIP   │
+│ - Sesuaikan perubahan teks ke Laporan-Akhir/latex/sections/ (*.tex)     │
+│ - Jalankan Laporan-Akhir/latex/package_overleaf.bat untuk membuat ZIP   │
 │ - Upload Laporan_Desa_Cantik_Overleaf.zip ke Overleaf.com               │
 │ - Recompile untuk menghasilkan PDF vektor 100% sempurna                 │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -52,7 +52,7 @@ Proyek ini dipisahkan secara tegas menjadi 2 tahap di dalam folder `Laporan Akhi
 ```
 D:\BPSMinsel\Desa Cantik\
 │
-├── Laporan Akhir/                       # FOLDER UTAMA DOKUMEN LAPORAN AKHIR
+├── Laporan-Akhir/                       # FOLDER UTAMA DOKUMEN LAPORAN AKHIR
 │   ├── sections/                        # Berkas HTML per-bab (FOKUS EDITING UTAMA)
 │   │   ├── cover.html                   # Halaman cover depan
 │   │   ├── kata-pengantar.html          # Kata pengantar & TTD Kepala BPS
@@ -99,11 +99,11 @@ D:\BPSMinsel\Desa Cantik\
 ## 🛠️ 4. Panduan untuk AI Assistant (Setiap Percakapan Baru)
 
 1. **Prioritas Alur**:
-   - Jika pengguna meminta menambah teks, mengedit bab, atau memasukkan data baru, **selalu lakukan perubahan di file `Laporan Akhir/sections/*.html` terlebih dahulu**.
-   - Setelah mengedit `sections/*.html`, jalankan script `Laporan Akhir/build.ps1` untuk merefresh `index.html` dan `print.html`.
-   - Jika pengguna meminta sinkronisasi ke LaTeX, barulah perbarui file terkait di `Laporan Akhir/latex/sections/*.tex` dan jalankan `Laporan Akhir/latex/package_overleaf.ps1`.
+   - Jika pengguna meminta menambah teks, mengedit bab, atau memasukkan data baru, **selalu lakukan perubahan di file `Laporan-Akhir/sections/*.html` terlebih dahulu**.
+   - Setelah mengedit `sections/*.html`, jalankan script `Laporan-Akhir/build.ps1` untuk merefresh `index.html` dan `print.html`.
+   - Jika pengguna meminta sinkronisasi ke LaTeX, barulah perbarui file terkait di `Laporan-Akhir/latex/sections/*.tex` dan jalankan `Laporan-Akhir/latex/package_overleaf.ps1`.
 2. **Version Control (Git)**:
    - Repository lokal telah aktif. Selalu pastikan commit dilakukan setelah setiap perubahan berarti dengan format konvensional (`feat: ...`, `fix: ...`, `docs: ...`).
 3. **Pencetakan Dokumen**:
-   - Pencetakan web dilakukan melalui `Laporan Akhir/print.html` di tab baru yang secara native memicu dialog print browser (*Save as PDF*).
-   - Pencetakan final buku resmi menggunakan `Laporan Akhir/latex/Laporan_Desa_Cantik_Overleaf.zip` di Overleaf.
+   - Pencetakan web dilakukan melalui `Laporan-Akhir/print.html` di tab baru yang secara native memicu dialog print browser (*Save as PDF*).
+   - Pencetakan final buku resmi menggunakan `Laporan-Akhir/latex/Laporan_Desa_Cantik_Overleaf.zip` di Overleaf.
