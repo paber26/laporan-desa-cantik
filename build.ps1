@@ -12,7 +12,6 @@ $sections = @(
     "sections/bab2-persiapan.html",
     "sections/bab3-pembinaan.html",
     "sections/bab4-penutup.html",
-    "sections/lampiran.html",
     "sections/cover-belakang.html"
 )
 
@@ -128,9 +127,6 @@ $indexHeader = @"
             <li><a href="#matriksKendala">Tabel Matriks Kendala</a></li>
             <li><a href="#sub4-2">4.2 Kesimpulan & Saran</a></li>
           </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#lampiranCover"><span>Lampiran</span><small>17</small></a>
         </li>
         <li class="toc-item">
           <a href="#coverBelakang"><span>Cover Belakang</span></a>
