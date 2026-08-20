@@ -2,7 +2,7 @@
 % LAPORAN AKHIR PEMBINAAN DESA CINTA STATISTIK (DESA CANTIK)
 % DESA POPONTOLEN, KECAMATAN TUMPAAN, KABUPATEN MINAHASA SELATAN
 % TAHUN 2026
-% Badan Pusat Statistik Kabupaten Minahasa Selatan
+% Badan Pusat Statistik Kabupaten Minahasa Selatan (BPS 7105)
 % ==============================================================================
 
 \documentclass[12pt,a4paper,oneside]{report}
@@ -15,7 +15,7 @@
 \renewcommand{\familydefault}{\sfdefault} % Font modern sans-serif formal
 
 \usepackage{graphicx}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning}
 \usepackage{setspace}
@@ -23,7 +23,19 @@
 
 \usepackage{indentfirst}
 \setlength{\parindent}{1.0cm} % Indentasi awal paragraf
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{5pt}
+
+% --- Palet Warna Resmi BPS & UI Modern (Matching HTML) ---
+\definecolor{bpsnavy}{HTML}{034EA2}      % Biru Resmi BPS (#034EA2)
+\definecolor{bpsorange}{HTML}{F37021}    % Oranye Resmi BPS (#F37021)
+\definecolor{bpsdark}{HTML}{0F172A}      % Teks Heading Gelap (#0F172A)
+\definecolor{bpstext}{HTML}{1E293B}      % Teks Utama (#1E293B)
+\definecolor{bpslight}{HTML}{F1F5F9}     % Latar Belakang Sel / Shading
+\definecolor{bpsborder}{HTML}{CBD5E1}    % Border Garis Tabel (#CBD5E1)
+\definecolor{bpsaccent}{HTML}{E0F2FE}    % Biru Muda Aksen (#E0F2FE)
+\definecolor{bpsgreen}{HTML}{00A39D}     % Hijau/Teal BPS (#00A39D)
+\definecolor{ribbonred}{HTML}{DC2626}    % Merah Pita Cover
+\definecolor{ribbongray}{HTML}{94A3B8}   % Abu-abu Pita Cover
 
 % --- Tabel & Matriks ---
 \usepackage{tabularx}
@@ -32,20 +44,22 @@
 \usepackage{array}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
+\usepackage{colortbl}
 
-% --- Penomoran & Judul Bab ---
+% --- Penomoran & Judul Bab Berwarna ---
 \usepackage{titlesec}
 \titleformat{\chapter}[DISPLAY]
-  {\normalfont\large\bfseries\centering}
-  {\MakeUppercase{\chaptertitlename\ \thechapter}}
+  {\normalfont\bfseries\centering}
+  {\color{bpsnavy}\fontsize{13pt}{15pt}\selectfont\MakeUppercase{\chaptertitlename\ \thechapter}}
   {6pt}
-  {\Large\MakeUppercase}
-\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+  {\color{bpsdark}\fontsize{15pt}{18pt}\selectfont\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{-10pt}{22pt}
 
+% Section Titles Berwarna Biru BPS
 \titleformat{\section}
-  {\normalfont\bfseries\normalsize}{\thesection}{1em}{}
+  {\color{bpsnavy}\normalfont\bfseries\fontsize{12pt}{14pt}\selectfont}{\thesection}{1em}{}
 \titleformat{\subsection}
-  {\normalfont\bfseries\normalsize}{\thesubsection}{1em}{}
+  {\color{bpsdark}\normalfont\bfseries\fontsize{11pt}{13pt}\selectfont}{\thesubsection}{1em}{}
 
 % Penomoran dalam Bahasa Indonesia
 \renewcommand{\chaptername}{BAB}
@@ -53,34 +67,38 @@
 \renewcommand{\tablename}{Tabel}
 \renewcommand{\figurename}{Gambar}
 
-% --- Header & Footer ---
+% --- Header & Footer Berwarna Elegan ---
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyfoot[R]{\thepage} % Nomor halaman di kanan bawah
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\textcolor{gray!80}{\footnotesize \textit{Laporan Akhir Desa Cantik Popontolen 2026}}}
+\fancyhead[R]{\textcolor{bpsnavy}{\footnotesize \textbf{BPS Kab. Minahasa Selatan}}}
+\fancyfoot[L]{\textcolor{gray!80}{\footnotesize Badan Pusat Statistik (BPS 7105)}}
+\fancyfoot[R]{\textcolor{bpsnavy}{\bfseries \thepage}}
+\renewcommand{\headrule}{\color{bpsborder}\hrule width\headwidth height 0.6pt \vskip-\headrulewidth}
+\renewcommand{\footrule}{\color{bpsborder}\hrule width\headwidth height 0.6pt \vskip-\headrulewidth}
 
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyfoot[R]{\thepage}
+  \fancyfoot[L]{\textcolor{gray!80}{\footnotesize Badan Pusat Statistik (BPS 7105)}}
+  \fancyfoot[R]{\textcolor{bpsnavy}{\bfseries \thepage}}
   \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0.4pt}
+  \renewcommand{\footrule}{\color{bpsborder}\hrule width\headwidth height 0.6pt \vskip-\headrulewidth}
 }
 
-% --- Hyperlink & Daftar Isi ---
+% --- Hyperlink & Daftar Isi Berwarna ---
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
-    citecolor=black,
-    urlcolor=blue
+    linkcolor=bpsnavy,
+    citecolor=bpsorange,
+    urlcolor=bpsnavy
 }
 
 % --- Daftar & List ---
 \usepackage{enumitem}
-\setlist[enumerate]{topsep=2pt,itemsep=2pt,partopsep=0pt,parsep=0pt,leftmargin=1.0cm}
-\setlist[itemize]{topsep=2pt,itemsep=2pt,partopsep=0pt,parsep=0pt,leftmargin=1.0cm}
+\setlist[enumerate]{topsep=3pt,itemsep=3pt,partopsep=0pt,parsep=0pt,leftmargin=1.0cm}
+\setlist[itemize]{topsep=3pt,itemsep=3pt,partopsep=0pt,parsep=0pt,leftmargin=1.0cm}
 
 % ==============================================================================
 % DOKUMEN UTAMA

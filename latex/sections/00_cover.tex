@@ -1,5 +1,5 @@
 % ==============================================================================
-% HALAMAN COVER / SAMPUL LAPORAN
+% HALAMAN COVER / SAMPUL LAPORAN (BERWARNA RESMI BPS)
 % ==============================================================================
 
 \begin{titlepage}
@@ -8,31 +8,31 @@
 % --- TikZ Background Accents (Pita Merah & Abu-abu BPS) ---
 \begin{tikzpicture}[remember picture,overlay]
   % Pita Atas (Abu-abu / Perak)
-  \fill[gray!40] 
+  \fill[ribbongray!50] 
     (current page.north west) -- 
     (current page.north east) -- 
-    ($(current page.north east)+(0,-4.5)$) -- 
-    ($(current page.north west)+(0,-6.0)$) -- cycle;
+    ($(current page.north east)+(0,-4.6)$) -- 
+    ($(current page.north west)+(0,-6.2)$) -- cycle;
     
   % Pita Atas (Merah BPS)
-  \fill[red!75!black] 
+  \fill[ribbonred] 
     (current page.north west) -- 
     (current page.north east) -- 
-    ($(current page.north east)+(0,-3.5)$) -- 
-    ($(current page.north west)+(0,-4.8)$) -- cycle;
+    ($(current page.north east)+(0,-3.6)$) -- 
+    ($(current page.north west)+(0,-5.0)$) -- cycle;
 
   % Pita Bawah (Abu-abu)
-  \fill[gray!40] 
+  \fill[ribbongray!50] 
     (current page.south west) -- 
     (current page.south east) -- 
-    ($(current page.south east)+(0,5.5)$) -- 
+    ($(current page.south east)+(0,5.6)$) -- 
     ($(current page.south west)+(0,4.0)$) -- cycle;
 
   % Pita Bawah (Merah BPS)
-  \fill[red!75!black] 
+  \fill[ribbonred] 
     (current page.south west) -- 
     (current page.south east) -- 
-    ($(current page.south east)+(0,4.5)$) -- 
+    ($(current page.south east)+(0,4.6)$) -- 
     ($(current page.south west)+(0,3.0)$) -- cycle;
 \end{tikzpicture}
 
@@ -51,18 +51,18 @@
 
 \vspace*{3.5cm}
 
-% --- Judul Utama Cover ---
+% --- Judul Utama Cover dengan Warna Resmi ---
 \begin{center}
-  {\Huge \textbf{LAPORAN AKHIR}} \\[0.8cm]
-  {\LARGE \textbf{PEMBINAAN DESA CANTIK}} \\[0.8cm]
-  {\huge \textbf{\textcolor{orange!80!black}{DESA POPONTOLEN}}}
+  {\Huge \textbf{\textcolor{bpsnavy}{LAPORAN AKHIR}}} \\[0.8cm]
+  {\LARGE \textbf{\textcolor{bpsdark}{PEMBINAAN DESA CANTIK}}} \\[0.8cm]
+  {\fontsize{32pt}{36pt}\selectfont \textbf{\textcolor{bpsorange}{DESA POPONTOLEN}}}
 \end{center}
 
 \vfill
 
 % --- Tahun di Bagian Bawah ---
 \begin{center}
-  {\Huge \textbf{TAHUN 2026}}
+  {\Huge \textbf{\textcolor{bpsnavy}{TAHUN 2026}}}
 \end{center}
 \vspace*{1.5cm}
 

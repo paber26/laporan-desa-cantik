@@ -1,40 +1,40 @@
 % ==============================================================================
-% HALAMAN PEMISAH LAMPIRAN
+% HALAMAN PEMISAH LAMPIRAN (BERWARNA RESMI BPS)
 % ==============================================================================
 
 \clearpage
 \thispagestyle{empty}
 
 \begin{tikzpicture}[remember picture,overlay]
-  % Pita Atas
-  \fill[gray!40] 
+  % Pita Atas (Abu-abu & Merah)
+  \fill[ribbongray!50] 
     (current page.north west) -- 
     (current page.north east) -- 
-    ($(current page.north east)+(0,-4.5)$) -- 
-    ($(current page.north west)+(0,-6.0)$) -- cycle;
+    ($(current page.north east)+(0,-4.6)$) -- 
+    ($(current page.north west)+(0,-6.2)$) -- cycle;
     
-  \fill[red!75!black] 
+  \fill[ribbonred] 
     (current page.north west) -- 
     (current page.north east) -- 
-    ($(current page.north east)+(0,-3.5)$) -- 
-    ($(current page.north west)+(0,-4.8)$) -- cycle;
+    ($(current page.north east)+(0,-3.6)$) -- 
+    ($(current page.north west)+(0,-5.0)$) -- cycle;
 
-  % Pita Bawah
-  \fill[gray!40] 
+  % Pita Bawah (Abu-abu & Merah)
+  \fill[ribbongray!50] 
     (current page.south west) -- 
     (current page.south east) -- 
-    ($(current page.south east)+(0,5.5)$) -- 
+    ($(current page.south east)+(0,5.6)$) -- 
     ($(current page.south west)+(0,4.0)$) -- cycle;
 
-  \fill[red!75!black] 
+  \fill[ribbonred] 
     (current page.south west) -- 
     (current page.south east) -- 
-    ($(current page.south east)+(0,4.5)$) -- 
+    ($(current page.south east)+(0,4.6)$) -- 
     ($(current page.south west)+(0,3.0)$) -- cycle;
 \end{tikzpicture}
 
 \vspace*{8.0cm}
 \begin{center}
-  {\fontsize{36pt}{42pt}\selectfont \textbf{\textcolor{orange!80!black}{LAMPIRAN}}} \\[0.5cm]
-  {\large \textit{Dokumentasi Kegiatan \& Surat Keputusan Terkait}}
+  {\fontsize{36pt}{42pt}\selectfont \textbf{\textcolor{bpsorange}{LAMPIRAN}}} \\[0.6cm]
+  {\large \textcolor{bpsnavy}{\textit{Dokumentasi Kegiatan \& Surat Keputusan Terkait}}}
 \end{center}
