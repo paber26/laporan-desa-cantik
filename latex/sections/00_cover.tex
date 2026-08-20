@@ -1,69 +1,15 @@
 % ==============================================================================
-% HALAMAN COVER / SAMPUL LAPORAN (BERWARNA RESMI BPS)
+% HALAMAN COVER DEPAN (OFFICIAL HIGH-RES GRAPHIC)
 % ==============================================================================
 
 \begin{titlepage}
 \thispagestyle{empty}
 
-% --- TikZ Background Accents (Pita Merah & Abu-abu BPS) ---
 \begin{tikzpicture}[remember picture,overlay]
-  % Pita Atas (Abu-abu / Perak)
-  \fill[ribbongray!50] 
-    (current page.north west) -- 
-    (current page.north east) -- 
-    ($(current page.north east)+(0,-4.6)$) -- 
-    ($(current page.north west)+(0,-6.2)$) -- cycle;
-    
-  % Pita Atas (Merah BPS)
-  \fill[ribbonred] 
-    (current page.north west) -- 
-    (current page.north east) -- 
-    ($(current page.north east)+(0,-3.6)$) -- 
-    ($(current page.north west)+(0,-5.0)$) -- cycle;
-
-  % Pita Bawah (Abu-abu)
-  \fill[ribbongray!50] 
-    (current page.south west) -- 
-    (current page.south east) -- 
-    ($(current page.south east)+(0,5.6)$) -- 
-    ($(current page.south west)+(0,4.0)$) -- cycle;
-
-  % Pita Bawah (Merah BPS)
-  \fill[ribbonred] 
-    (current page.south west) -- 
-    (current page.south east) -- 
-    ($(current page.south east)+(0,4.6)$) -- 
-    ($(current page.south west)+(0,3.0)$) -- cycle;
+  \node[inner sep=0pt] at (current page.center) {
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/cover-depan.jpg}
+  };
 \end{tikzpicture}
-
-% --- Header Logo Bar ---
-\vspace*{-1.2cm}
-\noindent
-\begin{minipage}{\textwidth}
-  \centering
-  \begin{tabularx}{\textwidth}{@{}CCCC@{}}
-    \includegraphics[height=1.4cm]{images/logo-bps.png} &
-    \includegraphics[height=1.3cm]{images/logo-desacantik.png} &
-    \includegraphics[height=1.2cm]{images/logo-berakhlak.png} &
-    \includegraphics[height=1.3cm]{images/logo-sensusekonomi.png}
-  \end{tabularx}
-\end{minipage}
-
-\vspace*{3.5cm}
-
-% --- Judul Utama Cover dengan Warna Resmi ---
-\begin{center}
-  {\Huge \textbf{\textcolor{bpsnavy}{LAPORAN AKHIR}}} \\[0.8cm]
-  {\LARGE \textbf{\textcolor{bpsdark}{PEMBINAAN DESA CANTIK}}} \\[0.8cm]
-  {\fontsize{32pt}{36pt}\selectfont \textbf{\textcolor{bpsorange}{DESA POPONTOLEN}}}
-\end{center}
-
-\vfill
-
-% --- Tahun di Bagian Bawah ---
-\begin{center}
-  {\Huge \textbf{\textcolor{bpsnavy}{TAHUN 2026}}}
-\end{center}
-\vspace*{1.5cm}
+\mbox{}
 
 \end{titlepage}
