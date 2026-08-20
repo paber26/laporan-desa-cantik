@@ -1,69 +1,89 @@
-# Laporan Akhir Pembinaan Desa Cantik Popontolen Tahun 2026 (Format LaTeX)
+# Laporan Akhir Pembinaan Desa Cantik Desa Popontolen Tahun 2026
 **Badan Pusat Statistik Kabupaten Minahasa Selatan**
 
-Proyek dokumen resmi Laporan Akhir Pembinaan Desa Cinta Statistik (Desa Cantik) Desa Popontolen berbasis **LaTeX (`.tex`)** modular standar publikasi kedinasan BPS.
+Proyek dokumen laporan resmi yang memisahkan antara **Tahap Pengisian & Drafting (HTML)** dengan **Tahap Final Publikasi & Cetak Sempurna (LaTeX)**.
 
 ---
 
-## 🌟 Keunggulan Format LaTeX
+## 🔄 Alur Kerja (Workflow) yang Disarankan
 
-1. **Konsistensi Matematis & Pixel-Perfect**: Tata letak, pemenggalan kata (*hyphenation*), spasi antar-paragraf, dan batas halaman 100% terkunci dan tidak akan bergeser antar komputer.
-2. **Struktur Modular Per-Bab**: Setiap bab dipisah ke dalam berkas `.tex` mandiri di folder `sections/` sehingga sangat mudah diedit dan dilengkapi.
-3. **Standar Tata Naskah Dinas**:
-   - Ukuran kertas: **A4**
-   - Margin resmi: **Kiri 3.0 cm, Kanan 2.0 cm, Atas 2.5 cm, Bawah 2.5 cm**
-   - Spasi: **1.5 (One-half spacing)**
-   - Penomoran: **Romawi (`i, ii`)** untuk kata pengantar & daftar isi, serta **Arab (`1, 2, 3...`)** untuk bab isi.
+```
+┌─────────────────────────────────────────────────────────────┐
+│ 1. FOKUS EDITING & PENGISIAN DATA (HTML)                     │
+│    - Buka folder sections/ (bab1, bab2, bab3, bab4, dll)    │
+│    - Edit teks, data tabel, atau dokumentasi                │
+│    - Klik 2x build.bat untuk melihat hasil di index.html    │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ (Setelah isi laporan beres/lengkap)
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 2. FINAL PUBLIKASI & KOMPILASI PDF (LATEX)                  │
+│    - Buka folder latex/sections/ untuk penyesuaian teks     │
+│    - Klik 2x latex/package_overleaf.bat untuk buat ZIP      │
+│    - Upload Laporan_Desa_Cantik_Overleaf.zip ke Overleaf    │
+│    - Download PDF resmi berstandar publikasi BPS            │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 📁 Struktur Direktori Berkas
+## 📁 Struktur Direktori Terpisah
 
 ```
 D:\BPSMinsel\Desa Cantik\
 │
-├── main.tex                         # Master file LaTeX (Pengaturan dokumen & \input)
+├── [1. RUANG KERJA UTAMA - DRAFTING & PREVIEW HTML]
+│   ├── sections/                        # Berkas HTML per-bab (Edit di sini)
+│   │   ├── cover.html
+│   │   ├── kata-pengantar.html
+│   │   ├── daftar-isi.html
+│   │   ├── bab1-pendahuluan.html
+│   │   ├── bab2-persiapan.html
+│   │   ├── bab3-pembinaan.html
+│   │   ├── bab4-penutup.html
+│   │   └── lampiran.html
+│   ├── build.bat                        # Double-click untuk compile sections/ ke index.html
+│   ├── build.ps1                        # Script compiler PowerShell
+│   ├── index.html                       # Tampilan Web Interaktif & Live Preview
+│   ├── print.html                       # Tampilan Cetak
+│   ├── css/
+│   │   ├── style.css
+│   │   └── print.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/                          # Logo resmi PNG
 │
-├── sections/                        # Folder file bab terpisah (EDIT DI SINI)
-│   ├── 00_cover.tex                 # Cover resmi BPS dengan TikZ ribbon & logo
-│   ├── 01_kata_pengantar.tex        # Kata Pengantar & TTD Kepala BPS
-│   ├── 02_bab1_pendahuluan.tex      # BAB I Pendahuluan (Latar Belakang, Profil Desa, Tata Kelola)
-│   ├── 03_bab2_persiapan.tex        # BAB II Persiapan (Tabel Rencana Kerja, Pelatihan, Anggaran)
-│   ├── 04_bab3_pembinaan.tex        # BAB III Pembinaan & Pendampingan (Matriks Realisasi, SDI)
-│   ├── 05_bab4_penutup.tex          # BAB IV Penutup (Kendala, Matriks Solusi, Kesimpulan & Saran)
-│   └── 06_lampiran.tex              # Cover Halaman Lampiran
+├── [2. RUANG KERJA FINAL - PUBLIKASI LATEX]
+│   └── latex/                           # FOLDER KHUSUS LATEX
+│       ├── main.tex                     # Master file LaTeX
+│       ├── package_overleaf.bat         # 1-Klik buat ZIP siap upload ke Overleaf
+│       ├── Laporan_Desa_Cantik_Overleaf.zip  # File ZIP siap pakai
+│       ├── sections/                    # Berkas LaTeX (.tex) per-bab
+│       │   ├── 00_cover.tex
+│       │   ├── 01_kata_pengantar.tex
+│       │   ├── 02_bab1_pendahuluan.tex
+│       │   ├── 03_bab2_persiapan.tex
+│       │   ├── 04_bab3_pembinaan.tex
+│       │   ├── 05_bab4_penutup.tex
+│       │   └── 06_lampiran.tex
+│       └── images/                      # Logo resmi PNG
 │
-├── images/                          # Folder logo resmi PNG
-│   ├── logo-bps.png                 # Logo resmi BPS
-│   ├── logo-desacantik.png          # Logo resmi Desa Cantik
-│   ├── logo-berakhlak.png           # Logo resmi BerAKHLAK
-│   └── logo-sensusekonomi.png       # Logo resmi Sensus Ekonomi 2026
-│
-├── Laporan Akhir Desa Cantik Popontolen Tahun 2026.pdf  # File sumber PDF asli
-└── README.md                        # Panduan penggunaan proyek
+├── Laporan Akhir Desa Cantik Popontolen Tahun 2026.pdf  # Dokumen sumber asli
+└── README.md                            # Panduan proyek
 ```
 
 ---
 
-## 🚀 Cara Kompilasi ke PDF
+## ✏️ Cara Penggunaan Harian:
 
-### Cara 1: Menggunakan Overleaf (Paling Mudah & Rekomendasi Tanpa Install Software)
-1. Buka situs **[Overleaf.com](https://www.overleaf.com)** dan buat akun / login.
-2. Buat proyek baru dengan memilih **New Project** $\rightarrow$ **Upload Project**.
-3. Kompres (*ZIP*) folder `Desa Cantik` (pastikan memuat `main.tex`, folder `sections/`, dan folder `images/`) lalu unggah file `.zip` tersebut ke Overleaf.
-4. Klik tombol hijau **Recompile** di Overleaf. Dokumen PDF sempurna akan langsung ter-*generate* dan dapat diunduh!
+### Tahap 1: Mengedit & Melengkapi Isi (HTML)
+1. Buka folder [`sections/`](file:///D:/BPSMinsel/Desa%20Cantik/sections/) dan buka file bab yang ingin diedit (misal: `bab1-pendahuluan.html`).
+2. Ubah data atau tambahkan paragraf yang diperlukan, lalu simpan (`Ctrl + S`).
+3. **Klik 2x [`build.bat`](file:///D:/BPSMinsel/Desa%20Cantik/build.bat)**.
+4. Refresh browser pada [`index.html`](file:///D:/BPSMinsel/Desa%20Cantik/index.html) untuk melihat preview seketika.
 
-### Cara 2: Menggunakan Compiler Lokal di Komputer (MiKTeX / TeX Live)
-Jika Anda menginstall compiler LaTeX lokal di komputer Windows:
-```bash
-pdflatex main.tex
-```
-*(Jalankan perintah 2 kali agar Daftar Isi dan penomoran otomatis ter-update sempurna).*
-
----
-
-## ✏️ Cara Mengedit / Melengkapi Isi Laporan
-
-1. Buka berkas bab yang ingin Anda edit di dalam folder `sections/` (misalnya `sections/02_bab1_pendahuluan.tex` atau `sections/03_bab2_persiapan.tex`).
-2. Ubah atau tambahkan teks yang diinginkan.
-3. Kompilasi ulang `main.tex` untuk melihat hasil PDF yang telah ter-update secara otomatis.
+### Tahap 2: Finalisasi ke LaTeX (Jika Sudah Selesai)
+1. Buka folder [`latex/sections/`](file:///D:/BPSMinsel/Desa%20Cantik/latex/sections/) dan sesuaikan teks jika ada data baru.
+2. **Klik 2x [`latex/package_overleaf.bat`](file:///D:/BPSMinsel/Desa%20Cantik/latex/package_overleaf.bat)** untuk menghasilkan file `Laporan_Desa_Cantik_Overleaf.zip`.
+3. Buka **[Overleaf.com](https://www.overleaf.com)** $\rightarrow$ **New Project** $\rightarrow$ **Upload Project** $\rightarrow$ pilih file zip tersebut.
+4. Klik **Recompile** untuk mengunduh PDF publikasi akhir yang 100% konsisten.
