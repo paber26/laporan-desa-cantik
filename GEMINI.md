@@ -15,7 +15,7 @@ File ini adalah instruksi permanen (Project Memory & System Guidelines) untuk AI
 
 ### B. Sub-Proyek 2: `Publikasi-Desa/` (Publikasi Data Statistik Desa)
 - **Nama Dokumen**: Publikasi Profil Desa Popontolen Dalam Angka 2026.
-- **Penerbit / POV**: **Pemerintah Desa Popontolen** (Hukum Tua / Kepala Desa: **Elke S. Poluakan, SKM, M.Kes**).
+- **Penerbit / POV**: **Pemerintah Desa Popontolen** (Pejabat (Pj.) Hukum Tua: **Frando Kumayas, SE**).
 - **Lokasi Wilayah**: Desa Popontolen (7 Jaga), Kecamatan Tumpaan, Kabupaten Minahasa Selatan.
 
 ---
