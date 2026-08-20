@@ -1,8 +1,8 @@
 # ==============================================================================
-# SCRIPT PACKAGE OVERLEAF ZIP - PUBLIKASI DESA TUMPAAN DUA 2026
+# SCRIPT PACKAGE OVERLEAF ZIP - PUBLIKASI DESA POPONTOLEN 2026
 # ==============================================================================
 
-$targetZip = "$PSScriptRoot/Publikasi_Desa_Tumpaan_Dua_Overleaf.zip"
+$targetZip = "$PSScriptRoot/Publikasi_Desa_Popontolen_Overleaf.zip"
 if (Test-Path $targetZip) {
     Remove-Item $targetZip -Force
 }

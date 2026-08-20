@@ -1,7 +1,7 @@
 # ==============================================================================
-# SCRIPT BUILD / PENGGABUNG DOKUMEN PUBLIKASI DESA TUMPAAN DUA DALAM ANGKA 2026
+# SCRIPT BUILD / PENGGABUNG DOKUMEN PUBLIKASI DESA POPONTOLEN DALAM ANGKA 2026
 # Menyatukan seluruh file per-bab dari folder 'sections/' ke 'index.html' dan 'print.html'
-# Penerbit: Pemerintah Desa Tumpaan Dua, Kec. Tumpaan, Kab. Minahasa Selatan
+# Penerbit: Pemerintah Desa Popontolen, Kec. Tumpaan, Kab. Minahasa Selatan
 # ==============================================================================
 
 $sections = @(
@@ -25,9 +25,9 @@ $indexHeader = @"
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Publikasi Profil Desa Tumpaan Dua Dalam Angka 2026 - Pemerintah Desa Tumpaan Dua Kecamatan Tumpaan Kabupaten Minahasa Selatan">
-  <meta name="author" content="Pemerintah Desa Tumpaan Dua">
-  <title>Publikasi Desa Tumpaan Dua Dalam Angka 2026 | Pemerintah Desa Tumpaan Dua</title>
+  <meta name="description" content="Publikasi Profil Desa Popontolen Dalam Angka 2026 - Pemerintah Desa Popontolen Kecamatan Tumpaan Kabupaten Minahasa Selatan">
+  <meta name="author" content="Pemerintah Desa Popontolen">
+  <title>Publikasi Desa Popontolen Dalam Angka 2026 | Pemerintah Desa Popontolen</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="icon" href="images/logo-bps.png" type="image/png">
@@ -47,7 +47,7 @@ $indexHeader = @"
         </svg>
       </button>
       <span class="topbar-badge" style="background: #059669;">PEMDES</span>
-      <span class="topbar-title">Tumpaan Dua Dalam Angka 2026</span>
+      <span class="topbar-title">Popontolen Dalam Angka 2026</span>
       <span class="topbar-subtitle">| Publikasi Profil Desa</span>
     </div>
 
@@ -153,7 +153,7 @@ $printHeader = @"
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cetak Dokumen - Publikasi Desa Tumpaan Dua Dalam Angka 2026</title>
+  <title>Cetak Dokumen - Publikasi Desa Popontolen Dalam Angka 2026</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css">
   <style>
