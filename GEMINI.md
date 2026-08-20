@@ -1,109 +1,91 @@
-# PANDUAN PENGEMBANGAN & ARSITEKTUR PROYEK
-# LAPORAN AKHIR DESA CANTIK POPONTOLEN TAHUN 2026
-# Badan Pusat Statistik Kabupaten Minahasa Selatan (BPS 7105)
+# PANDUAN PENGEMBANGAN & ARSITEKTUR WORKSPACE
+# PROGRAM DESA CANTIK KABUPATEN MINAHASA SELATAN TAHUN 2026
+# Badan Pusat Statistik (BPS 7105) & Pemerintah Desa Binaan
 
-File ini adalah instruksi permanen (Project Memory & System Guidelines) untuk AI Assistant dan pengembang. Ketika memulai percakapan baru atau berganti perangkat, ikuti seluruh arsitektur dan alur kerja yang didefinisikan di bawah ini.
+File ini adalah instruksi permanen (Project Memory & System Guidelines) untuk AI Assistant dan pengembang. Workspace ini menaungi 2 sub-proyek dokumen terpisah dengan arsitektur dua tahap:
 
 ---
 
-## 🏛️ 1. Identitas & Informasi Dokumen
+## 🏛️ 1. Sub-Proyek & Identitas Dokumen
 
+### A. Sub-Proyek 1: `Laporan-Akhir/` (Laporan Pembinaan BPS)
 - **Nama Dokumen**: Laporan Akhir Pembinaan Desa Cinta Statistik (Desa Cantik) Desa Popontolen Tahun 2026.
-- **Instansi**: Badan Pusat Statistik Kabupaten Minahasa Selatan.
-- **Lokasi Wilayah**: Desa Popontolen, Kecamatan Tumpaan, Kabupaten Minahasa Selatan, Sulawesi Utara.
-- **Data Kunci Wilayah**:
-  - Luas Wilayah: 365 ha
-  - Jumlah Penduduk: 1.570 jiwa (Laki-laki: 816, Perempuan: 754)
-  - Jumlah Keluarga: 569 KK
-  - Mata Pencaharian: Petani
-  - Batas: Utara (Desa Sulu), Timur (Desa Lelema), Selatan & Barat (Desa Matani)
-  - Geografis: Ketinggian $\pm 3$ mdpl, Curah hujan 179 mm/thn, Suhu 25–30$^\circ$C
-  - Orbitrasi: Ke Kecamatan 6 km, ke Ibukota Kab. Minsel (Amurang) 10 km, ke Provinsi 43 km.
-- **Kepala BPS Kab. Minahasa Selatan**: Irena Listianawati, SST, SE, M.Si (Amurang Barat, 10 Agustus 2026).
+- **Penerbit / POV**: Badan Pusat Statistik Kabupaten Minahasa Selatan (Kepala BPS: Irena Listianawati, SST, SE, M.Si).
+- **Lokasi Wilayah**: Desa Popontolen, Kecamatan Tumpaan, Kabupaten Minahasa Selatan.
+
+### B. Sub-Proyek 2: `Publikasi-Desa/` (Publikasi Data Statistik Desa)
+- **Nama Dokumen**: Publikasi Profil Desa Tumpaan Dua Dalam Angka 2026.
+- **Penerbit / POV**: **Pemerintah Desa Tumpaan Dua** (Hukum Tua / Kepala Desa: **Elke S. Poluakan, SKM, M.Kes**).
+- **Lokasi Wilayah**: Desa Tumpaan Dua (7 Jaga), Kecamatan Tumpaan, Kabupaten Minahasa Selatan.
 
 ---
 
 ## 🔄 2. Alur Kerja Dua Tahap (Dual-Stage Architecture)
 
-Proyek ini dipisahkan secara tegas menjadi 2 tahap di dalam folder `Laporan-Akhir/`:
+Setiap sub-proyek (`Laporan-Akhir/` dan `Publikasi-Desa/`) menerapkan arsitektur dua tahap yang sama:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ TAHAP 1: EDITING, PENGISIAN & DRAFTING (HTML MODULAR)                   │
-│ - Edit file per-bab di folder Laporan-Akhir/sections/ (*.html)          │
-│ - Jalankan Laporan-Akhir/build.bat (atau build.ps1) untuk update HTML   │
-│ - Buka / Live Preview di Laporan-Akhir/index.html atau print.html       │
+│ - Edit file per-bab di folder sections/ (*.html)                        │
+│ - Jalankan build.bat (atau build.ps1) untuk update HTML                 │
+│ - Buka / Live Preview di index.html atau print.html                     │
 └────────────────────────────────────┬────────────────────────────────────┘
                                      │ (Setelah seluruh isi dokumen fix)
                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ TAHAP 2: FINALISASI & PUBLIKASI RESMI (LATEX / OVERLEAF)                │
-│ - Sesuaikan perubahan teks ke Laporan-Akhir/latex/sections/ (*.tex)     │
-│ - Jalankan Laporan-Akhir/latex/package_overleaf.bat untuk membuat ZIP   │
-│ - Upload Laporan_Desa_Cantik_Overleaf.zip ke Overleaf.com               │
+│ - Sesuaikan perubahan teks ke folder latex/sections/ (*.tex)            │
+│ - Jalankan latex/package_overleaf.bat untuk membuat ZIP                 │
+│ - Upload berkas ZIP ke Overleaf.com                                     │
 │ - Recompile untuk menghasilkan PDF vektor 100% sempurna                 │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 📁 3. Struktur Berkas Lengkap
+## 📁 3. Struktur Berkas Lengkap Workspace
 
 ```
 D:\BPSMinsel\Desa Cantik\
 │
-├── Laporan-Akhir/                       # FOLDER UTAMA DOKUMEN LAPORAN AKHIR
-│   ├── sections/                        # Berkas HTML per-bab (FOKUS EDITING UTAMA)
-│   │   ├── cover.html                   # Halaman cover depan
-│   │   ├── kata-pengantar.html          # Kata pengantar & TTD Kepala BPS
-│   │   ├── daftar-isi.html              # Halaman daftar isi
-│   │   ├── daftar-tabel.html            # Halaman daftar tabel
-│   │   ├── bab1-pendahuluan.html        # BAB I: Latar belakang, profil desa, tata kelola
-│   │   ├── bab2-persiapan.html          # BAB II: Tabel rencana kerja, pencanangan, pelatihan
-│   │   ├── bab3-pembinaan.html          # BAB III: Matriks realisasi, rantai data SDI
-│   │   ├── bab4-penutup.html            # BAB IV: Matriks kendala/solusi, saran & kesimpulan
-│   │   └── cover-belakang.html          # Halaman cover belakang
-│   │
-│   ├── build.bat                        # Double-click untuk menggabungkan sections/ ke index.html & print.html
-│   ├── build.ps1                        # Script PowerShell penggabung otomatis
-│   ├── index.html                       # Halaman web interaktif (Live preview & scrollspy)
-│   ├── print.html                       # Halaman dokumen cetak khusus (Tab baru)
-│   ├── css/
-│   │   ├── style.css                    # Tampilan web modern, dark mode, responsive
-│   │   └── print.css                    # Standar cetak A4 presisi anti-overflow
-│   ├── js/
-│   │   └── main.js                      # Fitur buka tab cetak, zoom teks, scrollspy
-│   ├── images/                          # Logo resmi PNG & Foto Lanskap Popontolen
-│   │
-│   └── latex/                           # FOLDER KHUSUS LATEX & OVERLEAF PUBLISHING
-│       ├── main.tex                     # Master file LaTeX
-│       ├── package_overleaf.bat         # Double-click untuk membuat ZIP Overleaf
-│       ├── package_overleaf.ps1         # Script kompresi ZIP
-│       ├── Laporan_Desa_Cantik_Overleaf.zip  # File ZIP siap upload ke Overleaf.com
-│       ├── sections/                    # Berkas LaTeX (.tex) per-bab
-│       │   ├── 00_cover.tex
-│       │   ├── 01_kata_pengantar.tex
-│       │   ├── 02_bab1_pendahuluan.tex
-│       │   ├── 03_bab2_persiapan.tex
-│       │   ├── 04_bab3_pembinaan.tex
-│       │   └── 05_bab4_penutup.tex
-│       └── images/                      # Salinan logo & cover untuk kompilasi LaTeX
+├── Laporan-Akhir/                       # PROYEK 1: LAPORAN AKHIR PEMBINAAN (POV BPS)
+│   ├── sections/                        # Berkas HTML modular (Cover, Bab 1-4, Daftar Isi/Tabel)
+│   ├── images/                          # Logo & grafis resmi
+│   ├── css/ & js/                       # Style & script interaktif
+│   ├── build.bat & build.ps1            # Pembangun HTML
+│   ├── index.html & print.html          # Web preview & dokumen cetak
+│   └── latex/                           # LaTeX & Overleaf packaging
+│       ├── main.tex
+│       ├── sections/ & images/
+│       ├── package_overleaf.bat / .ps1
+│       └── Laporan_Desa_Cantik_Overleaf.zip
+│
+├── Publikasi-Desa/                      # PROYEK 2: DESA TUMPAAN DUA DALAM ANGKA 2026 (POV PEMDES)
+│   ├── sections/                        # Berkas HTML modular (Cover, Kata Pengantar, Grafik, Bab 1-4)
+│   ├── images/                          # Grafik 1 & 2, foto potensi, logo
+│   ├── css/ & js/                       # Style & script interaktif
+│   ├── build.bat & build.ps1            # Pembangun HTML
+│   ├── index.html & print.html          # Web preview & dokumen cetak
+│   └── latex/                           # LaTeX & Overleaf packaging
+│       ├── main.tex
+│       ├── sections/ & images/
+│       ├── package_overleaf.bat / .ps1
+│       └── Publikasi_Desa_Tumpaan_Dua_Overleaf.zip
 │
 ├── GEMINI.md                            # Instruksi permanen AI Assistant
 ├── AGENTS.md                            # Instruksi permanen Antigravity Agent
-└── README.md                            # Panduan dokumentasi proyek
+└── README.md                            # Dokumentasi umum repositori
 ```
 
 ---
 
 ## 🛠️ 4. Panduan untuk AI Assistant (Setiap Percakapan Baru)
 
-1. **Prioritas Alur**:
-   - Jika pengguna meminta menambah teks, mengedit bab, atau memasukkan data baru, **selalu lakukan perubahan di file `Laporan-Akhir/sections/*.html` terlebih dahulu**.
-   - Setelah mengedit `sections/*.html`, jalankan script `Laporan-Akhir/build.ps1` untuk merefresh `index.html` dan `print.html`.
-   - Jika pengguna meminta sinkronisasi ke LaTeX, barulah perbarui file terkait di `Laporan-Akhir/latex/sections/*.tex` dan jalankan `Laporan-Akhir/latex/package_overleaf.ps1`.
-2. **Version Control (Git)**:
-   - Repository lokal telah aktif. Selalu pastikan commit dilakukan setelah setiap perubahan berarti dengan format konvensional (`feat: ...`, `fix: ...`, `docs: ...`).
-3. **Pencetakan Dokumen**:
-   - Pencetakan web dilakukan melalui `Laporan-Akhir/print.html` di tab baru yang secara native memicu dialog print browser (*Save as PDF*).
-   - Pencetakan final buku resmi menggunakan `Laporan-Akhir/latex/Laporan_Desa_Cantik_Overleaf.zip` di Overleaf.
+1. **Kenali Sub-Proyek**:
+   - Jika membahas dokumen pembinaan BPS / Popontolen $\rightarrow$ Bekerja di `Laporan-Akhir/`.
+   - Jika membahas publikasi data statistik desa / Tumpaan Dua $\rightarrow$ Bekerja di `Publikasi-Desa/` (Gunakan sudut pandang **Pemerintah Desa**).
+2. **Prioritas Alur**:
+   - Selalu edit `sections/*.html` terlebih dahulu $\rightarrow$ jalankan `build.ps1` $\rightarrow$ setelah fix, sinkronkan ke `latex/sections/*.tex` $\rightarrow$ jalankan `package_overleaf.ps1`.
+3. **Version Control (Git)**:
+   - Selalu commit setiap pembaruan dengan format pesan konvensional (`feat:`, `fix:`, `docs:`, `style:`).
