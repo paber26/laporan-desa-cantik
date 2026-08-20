@@ -55,10 +55,11 @@ D:\BPSMinsel\Desa Cantik\
 │   └── print.css                        # Aturan cetak A4 & pembagian halaman PDF
 ├── js/
 │   └── main.js                          # Pengendali interaktivitas & event cetak
-├── logo-bps.png                         # Logo resmi BPS
-├── logo-desacantik.png                  # Logo resmi Desa Cantik
-├── logo-berakhlak.png                   # Logo resmi BerAKHLAK
-├── logo-sensusekonomi.png               # Logo resmi Sensus Ekonomi 2026
+├── images/                              # Folder aset logo resmi
+│   ├── logo-bps.png                     # Logo resmi BPS
+│   ├── logo-desacantik.png              # Logo resmi Desa Cantik
+│   ├── logo-berakhlak.png               # Logo resmi BerAKHLAK
+│   └── logo-sensusekonomi.png           # Logo resmi Sensus Ekonomi 2026
 ├── Laporan Akhir Desa Cantik Popontolen Tahun 2026.pdf  # File sumber PDF asli
 └── README.md                            # Panduan dokumentasi proyek
 ```
