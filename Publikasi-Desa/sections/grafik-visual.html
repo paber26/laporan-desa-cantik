@@ -1,25 +1,66 @@
 <!-- ====================================================================
-     PAGE 6: VISUALISASI GRAFIK
+     PAGE 6: INFOGRAFIS & VISUALISASI DATA STATISTIK POPONTOLEN
      ==================================================================== -->
 <article class="page-sheet page-grafik-visual" id="grafikVisual">
   <div class="sheet-content">
     <div class="doc-header">
-      <h1>Visualisasi Grafik Statistik</h1>
+      <h1>Infografis & Visualisasi Data Statistik</h1>
     </div>
 
-    <!-- Grafik 1 -->
-    <div class="graph-card" style="margin-bottom: 24px; text-align: center;">
-      <h3 style="font-size: 1rem; color: #034EA2; margin-bottom: 8px;">Grafik 1. Jumlah Penduduk per Jaga Desa Popontolen (Tahun 2024 dan 2025)</h3>
-      <div style="width: 100%; max-width: 600px; margin: 0 auto; border: 1px solid #CBD5E1; border-radius: 8px; overflow: hidden; padding: 6px; background: #FFFFFF;">
-        <img src="images/grafik-1-penduduk.png" alt="Grafik 1 Jumlah Penduduk per Jaga" style="width: 100%; height: auto; display: block;">
+    <!-- Quick Stats Metric Badges -->
+    <div class="infographic-kpi-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px;">
+      <div style="background: linear-gradient(135deg, #034EA2, #1E40AF); color: #FFF; padding: 12px 14px; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(3,78,162,0.25);">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Total Penduduk 2025</div>
+        <div style="font-size: 1.4rem; font-weight: bold; margin: 4px 0;">1.570 <span style="font-size: 0.8rem; font-weight: normal;">jiwa</span></div>
+        <div style="font-size: 0.7rem; opacity: 0.85;">816 Laki | 754 Perempuan</div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #059669, #047857); color: #FFF; padding: 12px 14px; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(5,150,105,0.25);">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Usia Produktif (15-59)</div>
+        <div style="font-size: 1.4rem; font-weight: bold; margin: 4px 0;">64,4%</div>
+        <div style="font-size: 0.7rem; opacity: 0.85;">942 jiwa angkatan kerja</div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #F37021, #C2410C); color: #FFF; padding: 12px 14px; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(243,112,33,0.25);">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Total Keluarga</div>
+        <div style="font-size: 1.4rem; font-weight: bold; margin: 4px 0;">533 <span style="font-size: 0.8rem; font-weight: normal;">KK</span></div>
+        <div style="font-size: 0.7rem; opacity: 0.85;">179 Tani | 272 Non-Tani</div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #7C3AED, #5B21B6); color: #FFF; padding: 12px 14px; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(124,58,237,0.25);">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Rasio Elektrifikasi</div>
+        <div style="font-size: 1.4rem; font-weight: bold; margin: 4px 0;">99,5%</div>
+        <div style="font-size: 0.7rem; opacity: 0.85;">422 KK Listrik PLN</div>
       </div>
     </div>
 
-    <!-- Grafik 2 -->
-    <div class="graph-card" style="text-align: center;">
-      <h3 style="font-size: 1rem; color: #034EA2; margin-bottom: 8px;">Grafik 2. Distribusi Keluarga Pertanian dan Non-Pertanian per Jaga (Tahun 2025)</h3>
-      <div style="width: 100%; max-width: 600px; margin: 0 auto; border: 1px solid #CBD5E1; border-radius: 8px; overflow: hidden; padding: 6px; background: #FFFFFF;">
-        <img src="images/grafik-2-pekerjaan.png" alt="Grafik 2 Distribusi Keluarga Pertanian vs Non Pertanian" style="width: 100%; height: auto; display: block;">
+    <!-- Grafik 1 & 2 -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 20px;">
+      <!-- Grafik 1 -->
+      <div class="graph-card" style="text-align: center; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px; background: #FFFFFF;">
+        <h3 style="font-size: 0.95rem; color: #034EA2; margin-top: 0; margin-bottom: 8px;">Grafik 1. Jumlah Penduduk per Jaga di Desa Popontolen (2024 vs 2025)</h3>
+        <img src="images/grafik-1-penduduk.png" alt="Grafik 1 Jumlah Penduduk per Jaga" style="width: 100%; max-width: 650px; height: auto; display: block; margin: 0 auto;">
+      </div>
+
+      <!-- Grafik 2 -->
+      <div class="graph-card" style="text-align: center; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px; background: #FFFFFF;">
+        <h3 style="font-size: 0.95rem; color: #034EA2; margin-top: 0; margin-bottom: 8px;">Grafik 2. Distribusi Keluarga Pertanian vs Non-Pertanian per Jaga (2025)</h3>
+        <img src="images/grafik-2-pekerjaan.png" alt="Grafik 2 Distribusi Keluarga Pertanian vs Non Pertanian" style="width: 100%; max-width: 650px; height: auto; display: block; margin: 0 auto;">
+      </div>
+    </div>
+
+    <!-- Grafik 3 & 4 -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+      <!-- Grafik 3 -->
+      <div class="graph-card" style="text-align: center; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px; background: #FFFFFF;">
+        <h3 style="font-size: 0.95rem; color: #034EA2; margin-top: 0; margin-bottom: 8px;">Grafik 3. Komposisi Gender dan Struktur Kelompok Umur (2025)</h3>
+        <img src="images/grafik-3-struktur-umur.png" alt="Grafik 3 Struktur Umur dan Gender" style="width: 100%; max-width: 650px; height: auto; display: block; margin: 0 auto;">
+      </div>
+
+      <!-- Grafik 4 -->
+      <div class="graph-card" style="text-align: center; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px; background: #FFFFFF;">
+        <h3 style="font-size: 0.95rem; color: #034EA2; margin-top: 0; margin-bottom: 8px;">Grafik 4. Sebaran Fasilitas Ekonomi dan Sarana Pendidikan per Jaga (2025)</h3>
+        <img src="images/grafik-4-fasilitas.png" alt="Grafik 4 Fasilitas Ekonomi dan Pendidikan" style="width: 100%; max-width: 650px; height: auto; display: block; margin: 0 auto;">
       </div>
     </div>
   </div>
