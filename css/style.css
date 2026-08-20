@@ -941,8 +941,43 @@ body.dark-mode .doc-table .subhead-row {
     gap: 8px;
   }
   
-  .cover-logos-bar .logo-item img,
-  .cover-logos-bar .logo-item svg {
+  .cover-logos-bar .logo-item img {
     height: 32px;
   }
 }
+
+/* ==========================================================================
+   TOAST NOTIFICATION
+   ========================================================================== */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--bps-blue);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-notification.success {
+  border-left-color: var(--bps-emerald);
+}
+
+.toast-notification.warning {
+  border-left-color: var(--bps-orange);
+}
+

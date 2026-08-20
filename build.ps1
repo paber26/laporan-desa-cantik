@@ -1,6 +1,6 @@
 # ==============================================================================
 # SCRIPT BUILD / PENGGABUNG DOKUMEN LAPORAN AKHIR DESA CANTIK POPONTOLEN 2026
-# Menyatukan seluruh file per-bab dari folder 'sections/' ke 'index.html'
+# Menyatukan seluruh file per-bab dari folder 'sections/' ke 'index.html' dan 'print.html'
 # ==============================================================================
 
 $sections = @(
@@ -14,7 +14,8 @@ $sections = @(
     "sections/lampiran.html"
 )
 
-$header = @"
+# 1. TEMPLATE UTAMA (index.html)
+$indexHeader = @"
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -58,13 +59,21 @@ $header = @"
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      <button class="btn btn-success" id="printBtn" title="Cetak atau Simpan ke format PDF (Ukuran A4)">
+      <a href="print.html" target="_blank" class="btn btn-primary" title="Buka Dokumen Cetak Khusus di Tab Baru">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        <span>Buka Halaman Cetak</span>
+      </a>
+      <button class="btn btn-success" id="printBtn" title="Generate PDF dan Buka di Tab Baru">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="6 9 6 2 18 2 18 9"></polyline>
           <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
           <rect x="6" y="14" width="12" height="8"></rect>
         </svg>
-        <span>Cetak / Simpan PDF</span>
+        <span>Generate & Cetak PDF</span>
       </button>
     </div>
   </header>
@@ -134,54 +143,138 @@ $header = @"
        MAIN WRAPPER & DOCUMENT PAGES
        ========================================================================== -->
   <main class="main-wrapper" id="mainWrapper">
-    <div class="document-container">
+    <!-- Quick Interactive Statistics Overview (Visible in Web, hidden in Print) -->
+    <section class="quick-stats-grid no-print" style="width: 100%; max-width: 210mm;">
+      <div class="stat-card">
+        <div class="stat-val">365 Ha</div>
+        <div class="stat-label">Luas Wilayah</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">1.570</div>
+        <div class="stat-label">Total Penduduk</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">816 / 754</div>
+        <div class="stat-label">Laki / Perempuan</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">569</div>
+        <div class="stat-label">Kepala Keluarga</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">± 3 mdpl</div>
+        <div class="stat-label">Ketinggian</div>
+      </div>
+    </section>
 
-      <!-- Quick Interactive Statistics Overview (Visible in Web, hidden in Print) -->
-      <section class="quick-stats-grid no-print" style="width: 100%; max-width: 210mm;">
-        <div class="stat-card">
-          <div class="stat-val">365 Ha</div>
-          <div class="stat-label">Luas Wilayah</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">1.570</div>
-          <div class="stat-label">Total Penduduk</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">816 / 754</div>
-          <div class="stat-label">Laki / Perempuan</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">569</div>
-          <div class="stat-label">Kepala Keluarga</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">± 3 mdpl</div>
-          <div class="stat-label">Ketinggian</div>
-        </div>
-      </section>
+    <div class="document-container">
 "@
 
-$footer = @"
+$indexFooter = @"
     </div>
   </main>
 
+  <div id="toastNotification" class="toast-notification no-print"></div>
+
+  <script src="js/html2pdf.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
 "@
 
-$content = $header + "`n"
+# 2. TEMPLATE DOKUMEN CETAK MURNI (print.html)
+$printHeader = @"
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumen Cetak PDF - Laporan Akhir Desa Cantik Popontolen 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  <link rel="icon" href="images/logo-bps.png" type="image/png">
+  <style>
+    body {
+      background: #CBD5E1;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .document-container {
+      max-width: 210mm;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+    .print-floating-bar {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      z-index: 99999;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 10px 18px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    @media print {
+      .print-floating-bar, .no-print { display: none !important; }
+      body { background: #FFFFFF !important; padding: 0 !important; }
+      .document-container { gap: 0 !important; max-width: 100% !important; }
+      .page-sheet { box-shadow: none !important; margin: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-floating-bar no-print">
+    <span style="color: #FFF; font-size: 0.85rem; font-weight: 600;">Mode Dokumen Cetak</span>
+    <button class="btn btn-success" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      <span>Cetak / Save as PDF</span>
+    </button>
+    <button class="btn btn-primary" onclick="window.close()">
+      ✕ Tutup Tab
+    </button>
+  </div>
 
+  <div class="document-container">
+"@
+
+$printFooter = @"
+  </div>
+</body>
+</html>
+"@
+
+# Membaca seluruh sections
+$sectionsContent = ""
 foreach ($sec in $sections) {
     if (Test-Path $sec) {
         $secContent = Get-Content $sec -Raw -Encoding UTF8
-        $content += "`n" + $secContent + "`n"
+        $sectionsContent += "`n" + $secContent + "`n"
     } else {
         Write-Warning "File tidak ditemukan: $sec"
     }
 }
 
-$content += "`n" + $footer
+# Tulis file index.html
+$fullIndex = $indexHeader + $sectionsContent + $indexFooter
+[System.IO.File]::WriteAllText("$PSScriptRoot/index.html", $fullIndex, [System.Text.Encoding]::UTF8)
 
-[System.IO.File]::WriteAllText("$PSScriptRoot/index.html", $content, [System.Text.Encoding]::UTF8)
-Write-Host "Berhasil menyatukan seluruh file sections/ ke index.html!" -ForegroundColor Green
+# Tulis file print.html
+$fullPrint = $printHeader + $sectionsContent + $printFooter
+[System.IO.File]::WriteAllText("$PSScriptRoot/print.html", $fullPrint, [System.Text.Encoding]::UTF8)
+
+Write-Host "Berhasil menyatukan sections ke index.html dan print.html!" -ForegroundColor Green
