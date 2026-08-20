@@ -7,6 +7,7 @@ $sections = @(
     "sections/cover.html",
     "sections/kata-pengantar.html",
     "sections/daftar-isi.html",
+    "sections/daftar-tabel.html",
     "sections/bab1-pendahuluan.html",
     "sections/bab2-persiapan.html",
     "sections/bab3-pembinaan.html",
@@ -87,6 +88,9 @@ $indexHeader = @"
         </li>
         <li class="toc-item">
           <a href="#daftarIsi"><span>Daftar Isi</span><small>ii</small></a>
+        </li>
+        <li class="toc-item">
+          <a href="#daftarTabel"><span>Daftar Tabel</span><small>iii</small></a>
         </li>
         <li class="toc-item">
           <a href="#bab1"><span>BAB I. Pendahuluan</span><small>1</small></a>

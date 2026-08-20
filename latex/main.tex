@@ -64,6 +64,7 @@
 % Penomoran dalam Bahasa Indonesia
 \renewcommand{\chaptername}{BAB}
 \renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\listtablename}{Daftar Tabel}
 \renewcommand{\tablename}{Tabel}
 \renewcommand{\figurename}{Gambar}
 
@@ -116,6 +117,11 @@
 
 % Daftar Isi (Halaman ii)
 \tableofcontents
+\thispagestyle{plain}
+\clearpage
+
+% Daftar Tabel (Halaman iii)
+\listoftables
 \thispagestyle{plain}
 \clearpage
 
