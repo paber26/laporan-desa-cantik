@@ -125,16 +125,57 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
+% --- Divider Bagian 1 ---
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/divider-bab1.jpg}
+  };
+\end{tikzpicture}
+\mbox{}
+\clearpage
+
 % 1. Kependudukan dan Demografi
 \input{sections/03_bab1_demografi.tex}
+\clearpage
+
+% --- Divider Bagian 2 ---
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/divider-bab2.jpg}
+  };
+\end{tikzpicture}
+\mbox{}
 \clearpage
 
 % 2. Profil Keluarga dan Mata Pencaharian
 \input{sections/04_bab2_pekerjaan.tex}
 \clearpage
 
+% --- Divider Bagian 3 ---
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/divider-bab3.jpg}
+  };
+\end{tikzpicture}
+\mbox{}
+\clearpage
+
 % 3. Fasilitas Perumahan, Pendidikan, dan Ekonomi
 \input{sections/05_bab3_fasilitas.tex}
+\clearpage
+
+% --- Divider Bagian 4 ---
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/divider-bab4.jpg}
+  };
+\end{tikzpicture}
+\mbox{}
 \clearpage
 
 % 4. Penutup dan Rekomendasi

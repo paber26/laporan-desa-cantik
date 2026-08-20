@@ -11,9 +11,13 @@ $sections = @(
     "sections/daftar-tabel.html",
     "sections/daftar-grafik.html",
     "sections/grafik-visual.html",
+    "sections/divider-bab1.html",
     "sections/bab1-demografi.html",
+    "sections/divider-bab2.html",
     "sections/bab2-pekerjaan.html",
+    "sections/divider-bab3.html",
     "sections/bab3-fasilitas.html",
+    "sections/divider-bab4.html",
     "sections/bab4-penutup.html",
     "sections/cover-belakang.html"
 )
