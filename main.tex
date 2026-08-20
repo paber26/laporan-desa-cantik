@@ -1,0 +1,125 @@
+% ==============================================================================
+% LAPORAN AKHIR PEMBINAAN DESA CINTA STATISTIK (DESA CANTIK)
+% DESA POPONTOLEN, KECAMATAN TUMPAAN, KABUPATEN MINAHASA SELATAN
+% TAHUN 2026
+% Badan Pusat Statistik Kabupaten Minahasa Selatan
+% ==============================================================================
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- Packages Pengaturan Halaman & Tata Letak ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=3.0cm, right=2.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault} % Font modern sans-serif formal
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning}
+\usepackage{setspace}
+\onehalfspacing % Spasi 1.5 standar tata naskah dinas
+
+\usepackage{indentfirst}
+\setlength{\parindent}{1.0cm} % Indentasi awal paragraf
+\setlength{\parskip}{4pt}
+
+% --- Tabel & Matriks ---
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+% --- Penomoran & Judul Bab ---
+\usepackage{titlesec}
+\titleformat{\chapter}[DISPLAY]
+  {\normalfont\large\bfseries\centering}
+  {\MakeUppercase{\chaptertitlename\ \thechapter}}
+  {6pt}
+  {\Large\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+\titleformat{\section}
+  {\normalfont\bfseries\normalsize}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize}{\thesubsection}{1em}{}
+
+% Penomoran dalam Bahasa Indonesia
+\renewcommand{\chaptername}{BAB}
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\tablename}{Tabel}
+\renewcommand{\figurename}{Gambar}
+
+% --- Header & Footer ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage} % Nomor halaman di kanan bawah
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% --- Hyperlink & Daftar Isi ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+% --- Daftar & List ---
+\usepackage{enumitem}
+\setlist[enumerate]{topsep=2pt,itemsep=2pt,partopsep=0pt,parsep=0pt,leftmargin=1.0cm}
+\setlist[itemize]{topsep=2pt,itemsep=2pt,partopsep=0pt,parsep=0pt,leftmargin=1.0cm}
+
+% ==============================================================================
+% DOKUMEN UTAMA
+% ==============================================================================
+\begin{document}
+
+% --- 1. Halaman Cover ---
+\input{sections/00_cover.tex}
+
+% --- 2. Bagian Awal (Penomoran Romawi) ---
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+% Kata Pengantar (Halaman i)
+\input{sections/01_kata_pengantar.tex}
+\clearpage
+
+% Daftar Isi (Halaman ii)
+\tableofcontents
+\thispagestyle{plain}
+\clearpage
+
+% --- 3. Bagian Isi Dokumen (Penomoran Arab) ---
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% BAB I: Pendahuluan
+\input{sections/02_bab1_pendahuluan.tex}
+
+% BAB II: Persiapan Program
+\input{sections/03_bab2_persiapan.tex}
+
+% BAB III: Pembinaan dan Pendampingan
+\input{sections/04_bab3_pembinaan.tex}
+
+% BAB IV: Penutup
+\input{sections/05_bab4_penutup.tex}
+
+% --- 4. Bagian Lampiran ---
+\input{sections/06_lampiran.tex}
+
+\end{document}
